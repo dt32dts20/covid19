@@ -27,6 +27,7 @@
     "tested": "cases",
     "reports": "inquiries"
   },
+  "日付": "date",
   "公表日": "Published Date",
   "居住地": "Residence",
   "年代": "Age",
@@ -129,6 +130,7 @@
   "アクセスしようとしたページが見つかりませんでした。": "The page you tried to access could not be found.",
   "ページが移動または削除されたか、URLの入力間違いの可能性があります。": "The page may have been moved or deleted: or you might have typed in the wrong URL.: or you might have typed the wrong URL.",
   "トップページへ戻る": "Back to top page.",
+  "{title}のグラフをシェア": "Share graph for {title}",
   "第一庁舎計": "No. 1 Bldg. total",
   "第二庁舎計": "No. 2 Bldg. total",
   "議事堂計": "Metropolitan Assembly Bldg. total",
