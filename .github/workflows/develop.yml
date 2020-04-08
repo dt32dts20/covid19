@@ -13,7 +13,7 @@ jobs:
       - name: Pull submodule latest commit
         run: |
           git submodule update -i
-          cd data/ && git checkout development
+          cd data/ && git checkout master
 
       - name: Setup Node
         uses: actions/setup-node@v1
