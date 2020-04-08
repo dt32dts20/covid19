@@ -1,7 +1,7 @@
 <template>
   <v-col cols="12" md="6" class="DataCard">
     <circle-chart
-      :title="$t('入院患者数と残り病床数')"
+      :title="$t('入院患者数と病床数')"
       :title-id="'patietns-and-sickedbeds'"
       :chart-data="sickbedsGraph"
       :date="date"
