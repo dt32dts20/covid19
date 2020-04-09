@@ -161,6 +161,10 @@ export default Vue.extend({
           link: 'https://www.stopcovid19.jp/'
         },
         {
+          title: this.$t('お問い合わせ'),
+          link: this.localePath('/contacts')
+        },
+        {
           title: this.$t('当サイトについて'),
           link: this.localePath('/about')
         }
