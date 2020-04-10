@@ -5,7 +5,7 @@
       :title-id="'number-of-confirmed-cases'"
       :chart-id="'time-bar-chart-patients'"
       :chart-data="patientsGraph"
-      :date="Data.patients.date"
+      :date="date"
       :unit="$t('人')"
       :url="'https://data.bodik.jp/dataset/_covid19'"
     />
@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import Data from '@/data/json/data.json'
 import formatGraph from '@/utils/formatGraph'
 import TimeBarChart from '@/components/TimeBarChart.vue'
 
@@ -22,14 +21,27 @@ export default {
     TimeBarChart
   },
   data() {
-    // 感染者数グラフ
-    const patientsGraph = formatGraph(Data.patients_summary.data)
-
-    const data = {
-      Data,
-      patientsGraph
+    return {
+      date: String,
+      patientsGraph: []
     }
-    return data
+  },
+  created() {
+    this.setDataUsingAPI()
+  },
+  methods: {
+    async setDataUsingAPI() {
+      await this.$axios
+        .get('https://data-covid19-oita.netlify.com/json/data.json')
+        .then(response => {
+          const json = response.data
+          this.patientsGraph = formatGraph(json.patients_summary.data)
+          this.date = json.patients_summary.date
+        })
+        .catch(error => {
+          this.date = error
+        })
+    }
   }
 }
 </script>

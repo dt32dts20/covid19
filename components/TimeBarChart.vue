@@ -62,6 +62,7 @@ type Data = {
 }
 type Methods = {
   formatDayBeforeRatio: (dayBeforeRatio: number) => string
+  isNotLoaded: () => boolean
 }
 type Computed = {
   displayCumulativeRatio: string
@@ -166,16 +167,32 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   }),
   computed: {
     displayCumulativeRatio() {
+      if (this.isNotLoaded()) {
+        return ''
+      }
+
       const lastDay = this.chartData.slice(-1)[0].cumulative
       const lastDayBefore = this.chartData.slice(-2)[0].cumulative
       return this.formatDayBeforeRatio(lastDay - lastDayBefore)
     },
     displayTransitionRatio() {
+      if (this.isNotLoaded()) {
+        return ''
+      }
+
       const lastDay = this.chartData.slice(-1)[0].transition
       const lastDayBefore = this.chartData.slice(-2)[0].transition
       return this.formatDayBeforeRatio(lastDay - lastDayBefore)
     },
     displayInfo() {
+      if (this.isNotLoaded()) {
+        return {
+          lText: '',
+          sText: '',
+          unit: ''
+        }
+      }
+
       if (this.dataKind === 'transition') {
         return {
           lText: `${this.chartData.slice(-1)[0].transition.toLocaleString()}`,
@@ -200,6 +217,21 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       }
     },
     displayData() {
+      if (this.isNotLoaded()) {
+        return {
+          labels: [],
+          datasets: [
+            {
+              label: 'transition',
+              data: [],
+              backgroundColor: '',
+              borderColor: '',
+              borderWidth: 0
+            }
+          ]
+        }
+      }
+
       const style = getGraphSeriesStyle(1)[0]
       if (this.dataKind === 'transition') {
         return {
@@ -361,6 +393,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         default:
           return `${dayBeforeRatioLocaleString}`
       }
+    },
+    isNotLoaded() {
+      return this.chartData.length === 0
     }
   },
   mounted() {
