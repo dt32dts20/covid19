@@ -70,6 +70,14 @@ export default {
   },
   computed: {
     displayInfo() {
+      if (this.isNotLoaded()) {
+        return {
+          lText: '',
+          sText: '',
+          unit: ''
+        }
+      }
+
       // TODO: Display total patients.
       const chartData = this.chartData[this.chartData.length - 1]
       const total = chartData.cumulative.toLocaleString()
@@ -80,6 +88,14 @@ export default {
       }
     },
     displayData() {
+      if (this.isNotLoaded()) {
+        return {
+          lText: '',
+          sText: '',
+          unit: ''
+        }
+      }
+
       const colorArray = ['#0e470e', '#1d8d1d', '#2bd52b', '#95ea95', '#dcf8dc']
       return {
         labels: this.chartData.map(d => {
@@ -102,6 +118,10 @@ export default {
       }
     },
     displayOption() {
+      if (this.isNotLoaded()) {
+        return {}
+      }
+
       const unitBed = this.unit
       const unitPerson = this.$t('人')
       //      const label = this.$t('総病床数')
@@ -127,6 +147,14 @@ export default {
           display: true
         }
       }
+    }
+  },
+  methods: {
+    /**
+     * APIでデータを取得する前ならtrue
+     */
+    isNotLoaded() {
+      return this.chartData.length === 0
     }
   }
 }

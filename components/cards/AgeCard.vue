@@ -15,22 +15,33 @@
 <script>
 import formatVariableGraph from '@/utils/formatVariableGraph.ts'
 import CircleChartForAge from '@/components/CircleChartForAge.vue'
-import Data from '@/data/json/data.json'
 
 export default {
   components: {
     CircleChartForAge
   },
   data() {
-    const ageGraph = formatVariableGraph(Data.age.data)
-    const date = Data.age.date
-
-    const data = {
-      date,
-      ageGraph
+    return {
+      date: String,
+      ageGraph: []
     }
-
-    return data
+  },
+  created() {
+    this.setDataUsingAPI()
+  },
+  methods: {
+    async setDataUsingAPI() {
+      await this.$axios
+        .get('https://data-covid19-oita.netlify.com/json/data.json')
+        .then(response => {
+          const json = response.data
+          this.ageGraph = formatVariableGraph(json.age.data)
+          this.date = json.age.date
+        })
+        .catch(error => {
+          this.date = error
+        })
+    }
   }
 }
 </script>
