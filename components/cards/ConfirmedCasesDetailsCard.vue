@@ -3,7 +3,7 @@
     <confirmed-cases-card
       :title="$t('検査陽性者の状況')"
       :title-id="'details-of-confirmed-cases'"
-      :date="Data.main_summary.date"
+      :date="date"
     >
       <confirmed-cases-table
         :aria-label="$t('検査陽性者の状況')"
@@ -14,7 +14,6 @@
 </template>
 
 <script>
-import Data from '@/data/json/data.json'
 import formatConfirmedCases from '@/utils/formatConfirmedCases'
 import ConfirmedCasesCard from '@/components/ConfirmedCasesCard.vue'
 import ConfirmedCasesTable from '@/components/ConfirmedCasesTable.vue'
@@ -25,14 +24,27 @@ export default {
     ConfirmedCasesTable
   },
   data() {
-    // 検査陽性者の状況
-    const confirmedCases = formatConfirmedCases(Data.main_summary)
-
-    const data = {
-      Data,
-      confirmedCases
+    return {
+      date: String,
+      confirmedCases: {}
     }
-    return data
+  },
+  created() {
+    this.setDataUsingAPI()
+  },
+  methods: {
+    async setDataUsingAPI() {
+      await this.$axios
+        .get('https://data-covid19-oita.netlify.com/json/data.json')
+        .then(response => {
+          const json = response.data
+          this.confirmedCases = formatConfirmedCases(json.main_summary)
+          this.date = json.main_summary.date
+        })
+        .catch(error => {
+          this.date = error
+        })
+    }
   }
 }
 </script>
