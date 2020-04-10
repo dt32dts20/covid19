@@ -116,7 +116,7 @@ export default {
     displayOption() {
       const unitBed = this.unit
       const unitPerson = this.$t('人')
-      const label = this.$t('総病床数')
+      const label = this.$t('病床数')
       const chartData = this.chartData
       return {
         tooltips: {
