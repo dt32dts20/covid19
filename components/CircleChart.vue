@@ -1,5 +1,16 @@
 <template>
   <data-view :title="title" :title-id="titleId" :date="date" :url="url">
+    <template v-slot:button>
+      <ul :class="$style.notes">
+        <li>
+          {{
+            $t(
+              '病院以外で対応する場合もあるため、これが最大許容数ではありません。'
+            )
+          }}
+        </li>
+      </ul>
+    </template>
     <pie-chart
       :chart-id="chartId"
       :chart-data="displayData"
@@ -105,7 +116,7 @@ export default {
     displayOption() {
       const unitBed = this.unit
       const unitPerson = this.$t('人')
-      const label = this.$t('総病床数')
+      const label = this.$t('病床数')
       const chartData = this.chartData
       return {
         tooltips: {
@@ -136,7 +147,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" module>
 .Graph-Desc {
   margin: 10px 0;
   font-size: 12px;
@@ -144,5 +155,16 @@ export default {
 }
 .link {
   text-decoration: none;
+}
+ul.notes {
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding-left: 0 !important;
+  font-size: 12px;
+  color: $gray-3;
+
+  > li {
+    list-style-type: none;
+  }
 }
 </style>
