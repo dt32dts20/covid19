@@ -6,7 +6,7 @@
       :chart-data="sickbedsGraph"
       :date="date"
       :unit="$t('床')"
-      :info="$t('入院患者数') + '/' + $t('総病床数')"
+      :info="$t('入院患者数') + '/' + $t('病床数')"
       :url="'https://www.pref.oita.jp/site/bosaianzen/shingatacorona.html'"
     />
   </v-col>
