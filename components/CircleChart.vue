@@ -81,6 +81,14 @@ export default {
   },
   computed: {
     displayInfo() {
+      if (this.isNotLoaded()) {
+        return {
+          lText: '',
+          sText: '',
+          unit: ''
+        }
+      }
+
       const chartData = this.chartData[this.chartData.length - 1]
       const total = chartData.cumulative
       const remaining = chartData.transition
@@ -92,6 +100,19 @@ export default {
       }
     },
     displayData() {
+      if (this.isNotLoaded()) {
+        return {
+          labels: [''],
+          datasets: [
+            {
+              label: '',
+              data: '',
+              backgroundColor: '',
+              borderWidth: 0
+            }
+          ]
+        }
+      }
       const colorArray = ['#00B849', '#D9D9D9']
       return {
         labels: this.chartData.map(d => {
@@ -114,6 +135,10 @@ export default {
       }
     },
     displayOption() {
+      if (this.isNotLoaded()) {
+        return {}
+      }
+
       const unitBed = this.unit
       const unitPerson = this.$t('人')
       const label = this.$t('病床数')
@@ -142,6 +167,14 @@ export default {
           display: true
         }
       }
+    }
+  },
+  methods: {
+    /**
+     * APIでデータを取得する前ならtrue
+     */
+    isNotLoaded() {
+      return this.chartData.length === 0
     }
   }
 }
