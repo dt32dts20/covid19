@@ -34,7 +34,7 @@ export default {
   methods: {
     async setDataUsingAPI() {
       await this.$axios
-        .get('https://data-covid19-oita.netlify.com/json/data.json')
+        .get(process.env.apiUrl)
         .then(response => {
           const json = response.data
           this.date = json.patients.date
