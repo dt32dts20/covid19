@@ -1,10 +1,6 @@
 <template>
   <div class="MainPage">
-    <page-header
-      :icon="headerItem.icon"
-      :title="headerItem.title"
-      :date="headerItem.date"
-    />
+    <page-header :icon="headerItem.icon" :title="headerItem.title" />
     <div>
       <a
         href="https://twitter.com/share?ref_src=twsrc%5Etfw"
@@ -44,7 +40,6 @@
 import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 import PageHeader from '@/components/PageHeader.vue'
-import Data from '@/data/json/data.json'
 import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
@@ -66,11 +61,9 @@ export default Vue.extend({
   },
   data() {
     const data = {
-      Data,
       headerItem: {
         icon: 'mdi-chart-timeline-variant',
-        title: this.$t('県内の最新感染動向'),
-        date: Data.lastUpdate
+        title: this.$t('県内の最新感染動向')
       }
     }
     return data

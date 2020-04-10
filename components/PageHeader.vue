@@ -6,10 +6,6 @@
       </v-icon>
       {{ title }}
     </h2>
-    <div class="date">
-      <span>{{ $t('最終更新') }} </span>
-      <time :datetime="formattedDate">{{ date }}</time>
-    </div>
     <div v-show="!['ja', 'ja-basic'].includes($i18n.locale)" class="annotation">
       <span>{{ $t('注釈') }} </span>
     </div>
@@ -18,7 +14,6 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
 
 export default Vue.extend({
   props: {
@@ -29,15 +24,6 @@ export default Vue.extend({
     icon: {
       type: String,
       required: true
-    },
-    date: {
-      type: String,
-      required: true
-    }
-  },
-  computed: {
-    formattedDate(): string {
-      return convertDatetimeToISO8601Format(this.date)
     }
   }
 })
