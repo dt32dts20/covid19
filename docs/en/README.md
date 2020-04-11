@@ -101,10 +101,6 @@ Production | master | https://oita.stopcovid19.jp/ | Pull Requests other than Ad
 | Production site HTML | production | https://oita.stopcovid19.jp/ | Location where statically built HTML is located |
 
 ### Media Coverage
-- [Government CIOs' Portal, Japan](https://cio.go.jp/node/2581)
+- [Government CIOs' Portal, Japan](https://cio.go.jp/node/2581): The site was introduced as a countermeasure against a new type of coronavirus infection using open source from the Tokyo Metropolitan Government.
 
-The site was introduced as a countermeasure against a new type of coronavirus infection using open source from the Tokyo Metropolitan Government.
-
-- [TOS TV Oita](https://www.tostv.jp/emergency/)
-
-Some of the site's content was cited.
+- [TOS TV Oita](https://www.tostv.jp/emergency/): Some of the site's content was cited.
