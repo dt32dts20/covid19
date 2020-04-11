@@ -2,7 +2,7 @@
 
 ![](https://github.com/covid-oita/covid19/workflows/production%20deploy/badge.svg)
 
-[![大分県 新型コロナウイルス感染症対策サイト](https://user-images.githubusercontent.com/24912801/77246566-1f8fb180-6c6c-11ea-81b5-ebda94b8c163.png)](https://covid19-oita.netlify.com)
+[![大分県 新型コロナウイルス感染症対策サイト](https://user-images.githubusercontent.com/24912801/77246566-1f8fb180-6c6c-11ea-81b5-ebda94b8c163.png)](https://oita.stopcovid19.jp)
 
 ### 日本語 | [English](./docs/en/README.md)
 
@@ -83,7 +83,7 @@ Pull Request を送る際の branch は、以下のネーミングルールで�
 #### 基本的なブランチ
 | 目的 | ブランチ | 確認URL | 備考 |
 | ---- | -------- | ---- | ---- |
-| 開発 | development | http://dev-covid19-oita.netlify.com/ | base branch。基本はこちらに Pull Requestを送ってください |
+| 開発 | development | https://dev-covid19-oita.netlify.com/ | base branch。基本はこちらに Pull Requestを送ってください |
 | 本番 | master | https://oita.stopcovid19.jp/ | 管理者以外の Pull Request は禁止です |
 
 #### システムで利用しているブランチ
