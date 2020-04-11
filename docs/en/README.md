@@ -107,4 +107,4 @@ The site was introduced as a countermeasure against a new type of coronavirus in
 
 - [TOS TV Oita](https://www.tostv.jp/emergency/)
 
-Some of the site's content has been cited.
+Some of the site's content was cited.
