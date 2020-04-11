@@ -91,3 +91,7 @@ Pull Request を送る際の branch は、以下のネーミングルールで�
 | ---- | -------- | ---- | ---- |
 | 本番サイト | production | https://oita.stopcovid19.jp/ | 静的ビルドされたHTMLが置いてある場所 |
 
+
+### 掲載実績
+- [政府CIOポータル](https://cio.go.jp/node/2581)
+- [TOSテレビ大分](https://www.tostv.jp/emergency/)
