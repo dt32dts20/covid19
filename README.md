@@ -2,7 +2,7 @@
 
 ![](https://github.com/covid-oita/covid19/workflows/production%20deploy/badge.svg)
 
-[![大分県 新型コロナウイルス感染症対策サイト](https://user-images.githubusercontent.com/24912801/77246566-1f8fb180-6c6c-11ea-81b5-ebda94b8c163.png)](https://oita.stopcovid19.jp)
+[![大分県 新型コロナウイルス感染症対策サイト](https://user-images.githubusercontent.com/24912801/77246566-1f8fb180-6c6c-11ea-81b5-ebda94b8c163.png)](https://oita.stopcovid19.jp/)
 
 ### 日本語 | [English](./docs/en/README.md)
 
@@ -92,6 +92,11 @@ Pull Request を送る際の branch は、以下のネーミングルールで�
 | 本番サイト | production | https://oita.stopcovid19.jp/ | 静的ビルドされたHTMLが置いてある場所 |
 
 
-### 掲載実績
-- [政府CIOポータル](https://cio.go.jp/node/2581)
+### メディア掲載実績
+- [政府CIOポータル](https://cio.go.jp/node/2581/)
+
+東京都のオープンソースを活用した新型コロナウイルス感染症対策サイトとして紹介されました。
+
 - [TOSテレビ大分](https://www.tostv.jp/emergency/)
+
+コンテンツの一部が引用されました。
