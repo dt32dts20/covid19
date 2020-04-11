@@ -5,7 +5,10 @@ const autoprefixer = require('autoprefixer')
 const environment = process.env.NODE_ENV || 'development'
 
 const config: Configuration = {
-  mode: 'universal',
+  mode: 'spa',
+  env: {
+    apiUrl: 'https://data-covid19-oita.netlify.com/json/data.json'
+  },
   /*
    ** Headers of the page
    */
@@ -97,6 +100,7 @@ const config: Configuration = {
    */
   modules: [
     '@nuxtjs/pwa',
+    '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
     ['@nuxtjs/dotenv', { filename: `.env.${environment}` }],
     ['nuxt-i18n', i18n],

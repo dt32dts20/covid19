@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import Data from '@/data/json/data.json'
 import formatVariableGraph from '@/utils/formatVariableGraph.ts'
 import CircleChart from '@/components/CircleChart.vue'
 
@@ -22,15 +21,27 @@ export default {
     CircleChart
   },
   data() {
-    const date = Data.sickbeds_summary.date
-    const sickbedsGraph = formatVariableGraph(Data.sickbeds_summary.data)
-
-    const data = {
-      date,
-      sickbedsGraph
+    return {
+      date: String,
+      sickbedsGraph: []
     }
-
-    return data
+  },
+  created() {
+    this.setDataUsingAPI()
+  },
+  methods: {
+    async setDataUsingAPI() {
+      await this.$axios
+        .get(process.env.apiUrl)
+        .then(response => {
+          const json = response.data
+          this.sickbedsGraph = formatVariableGraph(json.sickbeds_summary.data)
+          this.date = json.sickbeds_summary.date
+        })
+        .catch(error => {
+          this.date = error
+        })
+    }
   }
 }
 </script>

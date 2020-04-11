@@ -5,7 +5,7 @@
       :title-id="'number-of-reports-to-covid19-consultation-desk'"
       :chart-id="'time-bar-chart-querents'"
       :chart-data="querentsGraph"
-      :date="Data.querents.date"
+      :date="date"
       :unit="$t('件.reports')"
       :url="'https://data.bodik.jp/dataset/_covid19'"
     />
@@ -14,7 +14,6 @@
 </template>
 
 <script>
-import Data from '@/data/json/data.json'
 import formatGraph from '@/utils/formatGraph'
 import TimeBarChart from '@/components/TimeBarChart.vue'
 
@@ -23,13 +22,27 @@ export default {
     TimeBarChart
   },
   data() {
-    const querentsGraph = formatGraph(Data.querents.data)
-
-    const data = {
-      Data,
-      querentsGraph
+    return {
+      date: String,
+      querentsGraph: []
     }
-    return data
+  },
+  created() {
+    this.setDataUsingAPI()
+  },
+  methods: {
+    async setDataUsingAPI() {
+      await this.$axios
+        .get(process.env.apiUrl)
+        .then(response => {
+          const json = response.data
+          this.querentsGraph = formatGraph(json.querents.data)
+          this.date = json.querents.date
+        })
+        .catch(error => {
+          this.date = error
+        })
+    }
   }
 }
 </script>
