@@ -125,16 +125,6 @@ export default Vue.extend({
           link: 'https://www.pref.oita.jp/uploaded/attachment/2072440.pdf'
         },
         {
-          icon: 'ParentIcon',
-          title: this.$t('お子様をお持ちの皆様へ'),
-          link: 'http://www.pref.oita.jp/soshiki/13560/koronauirusutaisaku.html'
-        },
-        {
-          icon: 'mdi-account-multiple',
-          title: this.$t('県民の皆様へ'),
-          link: 'https://www.pref.oita.jp/site/bosaianzen/shingatacorona.html'
-        },
-        {
           icon: 'mdi-domain',
           title: this.$t('中小企業の皆様へ'),
           link: 'https://oita-chusho.jp/pc/corona/',
@@ -142,7 +132,7 @@ export default Vue.extend({
         },
         {
           title: this.$t('大分県 新型コロナウイルスに関するお知らせ'),
-          link: 'http://www.pref.oita.jp/'
+          link: 'http://www.pref.oita.jp/site/covid19-oita/'
         },
         {
           title: this.$t('大分市 新型コロナウイルスに関連する情報'),
