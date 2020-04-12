@@ -18,7 +18,7 @@ This software is released under [the MIT License](./../../LICENSE.txt).
 
 ## For Translators
 
-Please check [How to translate](./../../TRANSLATION.md) doc.
+Please check [How to translate](./../../TRANSLATION.md) doc and [Code of Conduct](./../../CODE_OF_CONDUCT.md).
 
 ## For Developers
 

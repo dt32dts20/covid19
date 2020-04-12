@@ -11,6 +11,8 @@ Issues にあるいろいろな修正にご協力いただけると嬉しいで�
 
 詳しくは[貢献の仕方](./CONTRIBUTING.md)を御覧ください。
 
+[Code of Conduct](./CODE_OF_CONDUCT.md)はこちらを御覧ください。
+
 
 ## ライセンス
 本ソフトウェアは、[MITライセンス](./LICENSE.txt)の元提供されています。
