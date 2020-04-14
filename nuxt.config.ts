@@ -24,7 +24,7 @@ const config: Configuration = {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://oita.stopcovid19.jp/'
+        content: 'https://deploy-preview-176--review-covid19-oita.netlify.com/'
       },
       {
         hid: 'twitter:card',
