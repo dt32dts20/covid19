@@ -24,7 +24,7 @@ const config: Configuration = {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://stopcovid19.metro.tokyo.lg.jp'
+        content: 'https://oita.stopcovid19.jp/'
       },
       {
         hid: 'twitter:card',
@@ -32,24 +32,9 @@ const config: Configuration = {
         content: 'summary_large_image'
       },
       {
-        hid: 'twitter:site',
-        name: 'twitter:site',
-        content: '@tokyo_bousai'
-      },
-      {
-        hid: 'twitter:creator',
-        name: 'twitter:creator',
-        content: '@tokyo_bousai'
-      },
-      {
         hid: 'fb:app_id',
         property: 'fb:app_id',
-        content: '2879625188795443'
-      },
-      {
-        hid: 'note:card',
-        property: 'note:card',
-        content: 'summary_large_image'
+        content: '113749536134548'
       }
     ],
     link: [
