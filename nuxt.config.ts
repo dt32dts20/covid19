@@ -7,7 +7,7 @@ const environment = process.env.NODE_ENV || 'development'
 const config: Configuration = {
   mode: 'spa',
   env: {
-    apiUrl: 'https://data-covid19-oita.netlify.com/json/data.json'
+    apiUrl: 'https://data-covid19-oita.netlify.app/json/data.json'
   },
   /*
    ** Headers of the page
@@ -24,7 +24,20 @@ const config: Configuration = {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://stopcovid19.metro.tokyo.lg.jp'
+        content: 'https://oita.stopcovid19.jp/'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://oita.stopcovid19.jp/ogp.png',
+        width: '1200',
+        height: '630'
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content:
+          '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、有志が開設したものです。'
       },
       {
         hid: 'twitter:card',
@@ -32,24 +45,9 @@ const config: Configuration = {
         content: 'summary_large_image'
       },
       {
-        hid: 'twitter:site',
-        name: 'twitter:site',
-        content: '@tokyo_bousai'
-      },
-      {
-        hid: 'twitter:creator',
-        name: 'twitter:creator',
-        content: '@tokyo_bousai'
-      },
-      {
         hid: 'fb:app_id',
         property: 'fb:app_id',
-        content: '2879625188795443'
-      },
-      {
-        hid: 'note:card',
-        property: 'note:card',
-        content: 'summary_large_image'
+        content: '113749536134548'
       }
     ],
     link: [
@@ -159,7 +157,6 @@ const config: Configuration = {
         '/cards/number-of-confirmed-cases',
         '/cards/attributes-of-confirmed-cases',
         '/cards/number-of-tested',
-        '/cards/number-of-reports-to-covid19-telephone-advisory-center',
         '/cards/number-of-reports-to-covid19-consultation-desk',
         '/cards/predicted-number-of-toei-subway-passengers',
         '/cards/agency'
