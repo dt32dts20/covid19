@@ -29,7 +29,9 @@ const config: Configuration = {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://oita.stopcovid19.jp/ogp.png'
+        content: 'https://oita.stopcovid19.jp/ogp.png',
+        width: '1200',
+        height: '630'
       },
       {
         hid: 'twitter:card',
