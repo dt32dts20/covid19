@@ -34,6 +34,12 @@ const config: Configuration = {
         height: '630'
       },
       {
+        hid: 'og:description',
+        property: 'og:description',
+        content:
+          '当サイトは新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供するために、有志が開設したものです。'
+      },
+      {
         hid: 'twitter:card',
         name: 'twitter:card',
         content: 'summary_large_image'
