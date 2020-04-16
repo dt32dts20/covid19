@@ -27,6 +27,11 @@ const config: Configuration = {
         content: 'https://deploy-preview-176--review-covid19-oita.netlify.com/'
       },
       {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://oita.stopcovid19.jp/ogp.png'
+      },
+      {
         hid: 'twitter:card',
         name: 'twitter:card',
         content: 'summary_large_image'
