@@ -60,14 +60,9 @@ export default Vue.extend({
     ConsultationDeskReportsNumberCard
   },
   async fetch({ store, app: { $axios } }) {
-    await $axios
-      .get(process.env.apiUrl)
-      .then((response: any) => {
-        store.commit('setData', response.data)
-      })
-      .catch((error: any) => {
-        console.log(error)
-      })
+    await $axios.get(process.env.apiUrl).then((response: any) => {
+      store.commit('setData', response.data)
+    })
   },
   data() {
     const data = {
