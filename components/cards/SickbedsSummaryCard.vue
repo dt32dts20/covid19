@@ -20,9 +20,6 @@ export default {
   components: {
     CircleChart
   },
-  async fetch({ store }) {
-    await store.dispatch('api/getData')
-  },
   data() {
     return {
       date: String,
@@ -34,7 +31,7 @@ export default {
   },
   methods: {
     setData() {
-      const json = this.$store.state.api.data
+      const json = this.$store.state.data
       this.sickbedsGraph = formatVariableGraph(json.sickbeds_summary.data)
       this.date = json.sickbeds_summary.date
     }
