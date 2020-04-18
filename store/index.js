@@ -1,9 +1,13 @@
 export const state = () => ({
-  data: []
+  data: [],
+  news: []
 })
 
 export const mutations = {
   setData(state, data) {
     state.data = data
+  },
+  setNews(state, news) {
+    state.news = news
   }
 }

@@ -24,6 +24,7 @@
         charset="utf-8"
       />
     </div>
+    <whats-new :items="newsItems" />
     <v-row class="DataBlock">
       <confirmed-cases-details-card />
       <confirmed-cases-number-card />
@@ -40,6 +41,7 @@
 import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 import PageHeader from '@/components/PageHeader.vue'
+import WhatsNew from '@/components/WhatsNew.vue'
 import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
@@ -51,6 +53,7 @@ import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDe
 export default Vue.extend({
   components: {
     PageHeader,
+    WhatsNew,
     ConfirmedCasesDetailsCard,
     ConfirmedCasesNumberCard,
     ConfirmedCasesAttributesCard,
@@ -63,13 +66,17 @@ export default Vue.extend({
     await $axios.get(process.env.apiUrl).then((response: any) => {
       store.commit('setData', response.data)
     })
+    await $axios.get(process.env.newsUrl).then((response: any) => {
+      store.commit('setNews', response.data)
+    })
   },
   data() {
     const data = {
       headerItem: {
         icon: 'mdi-chart-timeline-variant',
         title: this.$t('県内の最新感染動向')
-      }
+      },
+      newsItems: this.$store.state.news.newsItems
     }
     return data
   },
