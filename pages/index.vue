@@ -63,6 +63,9 @@ export default Vue.extend({
     await $axios.get(process.env.apiUrl).then((response: any) => {
       store.commit('setData', response.data)
     })
+    await $axios.get(process.env.newsUrl).then((response: any) => {
+      store.commit('setNews', response.data)
+    })
   },
   data() {
     const data = {
