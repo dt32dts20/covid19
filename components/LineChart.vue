@@ -400,7 +400,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   },
   mounted() {
     const lineChart = this.$refs.lineChart as Vue
-    console.log(lineChart)
     const lineElement = lineChart.$el
     const canvas = lineElement.querySelector('canvas')
     const labelledbyId = `${this.titleId}-graph`
