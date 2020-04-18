@@ -26,6 +26,13 @@ export default {
       iso: 'en-US',
       file: 'en.json',
       description: 'English'
+    },
+    {
+      code: 'th',
+      name: 'Thai',
+      iso: 'th-TH',
+      file: 'th.json',
+      description: 'Thai'
     }
   ]
 }

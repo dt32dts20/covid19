@@ -62,6 +62,7 @@ export default Vue.extend({
 .WhatsNew {
   @include card-container();
   padding: 10px;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
