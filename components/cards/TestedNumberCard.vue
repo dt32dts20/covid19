@@ -27,20 +27,13 @@ export default {
     }
   },
   created() {
-    this.setDataUsingAPI()
+    this.setData()
   },
   methods: {
-    async setDataUsingAPI() {
-      await this.$axios
-        .get(process.env.apiUrl)
-        .then(response => {
-          const json = response.data
-          this.inspectionsGraph = formatGraph(json.inspections_summary.data)
-          this.date = json.inspections_summary.date
-        })
-        .catch(error => {
-          this.date = error
-        })
+    setData() {
+      const json = this.$store.state.data
+      this.inspectionsGraph = formatGraph(json.inspections_summary.data)
+      this.date = json.inspections_summary.date
     }
   }
 }

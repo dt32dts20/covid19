@@ -59,6 +59,11 @@ export default Vue.extend({
     SickedbedsSummaryCard,
     ConsultationDeskReportsNumberCard
   },
+  async fetch({ store, app: { $axios } }) {
+    await $axios.get(process.env.apiUrl).then((response: any) => {
+      store.commit('setData', response.data)
+    })
+  },
   data() {
     const data = {
       headerItem: {

@@ -30,20 +30,13 @@ export default {
     }
   },
   created() {
-    this.setDataUsingAPI()
+    this.setData()
   },
   methods: {
-    async setDataUsingAPI() {
-      await this.$axios
-        .get(process.env.apiUrl)
-        .then(response => {
-          const json = response.data
-          this.confirmedCases = formatConfirmedCases(json.main_summary)
-          this.date = json.main_summary.date
-        })
-        .catch(error => {
-          this.date = error
-        })
+    setData() {
+      const json = this.$store.state.data
+      this.confirmedCases = formatConfirmedCases(json.main_summary)
+      this.date = json.main_summary.date
     }
   }
 }
