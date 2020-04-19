@@ -1,9 +1,9 @@
 <template>
   <v-col cols="12" md="6" class="DataCard">
-    <time-bar-chart
+    <time-chart
       :title="$t('検査実施数')"
       :title-id="'number-of-tested-cases'"
-      :chart-id="'time-bar-chart-tested'"
+      :chart-id="'time-chart-tested'"
       :chart-data="inspectionsGraph"
       :date="date"
       :unit="$t('件.tested')"
@@ -13,12 +13,12 @@
 </template>
 
 <script>
-import TimeBarChart from '@/components/TimeBarChart.vue'
+import TimeChart from '@/components/TimeChart.vue'
 import formatGraph from '@/utils/formatGraph'
 
 export default {
   components: {
-    TimeBarChart
+    TimeChart
   },
   data() {
     return {
