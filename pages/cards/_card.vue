@@ -1,22 +1,24 @@
 <template>
   <div>
-    <confirmed-cases-details-card
+    <patients-breakdown-card
       v-if="this.$route.params.card == 'details-of-confirmed-cases'"
     />
-    <confirmed-cases-number-card
+    <patients-transition-card
       v-else-if="this.$route.params.card == 'number-of-confirmed-cases'"
     />
-    <confirmed-cases-attributes-card
+    <patients-detail-card
       v-else-if="this.$route.params.card == 'attributes-of-confirmed-cases'"
     />
-    <tested-number-card
+    <inspections-transition-card
       v-else-if="this.$route.params.card == 'number-of-tested-cases'"
     />
-    <age-card v-else-if="this.$route.params.card == 'patients-by-age'" />
-    <sickbeds-summary-card
+    <patients-by-age-card
+      v-else-if="this.$route.params.card == 'patients-by-age'"
+    />
+    <sickbeds-used-rate-card
       v-else-if="this.$route.params.card == 'patietns-and-sickedbeds'"
     />
-    <consultation-desk-reports-number-card
+    <consultations-transition-card
       v-else-if="
         this.$route.params.card ==
           'number-of-reports-to-covid19-consultation-desk'
@@ -26,23 +28,23 @@
 </template>
 
 <script>
-import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
-import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
-import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
-import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
-import AgeCard from '@/components/cards/AgeCard.vue'
-import SickbedsSummaryCard from '@/components/cards/SickbedsSummaryCard.vue'
-import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
+import PatientsBreakdownCard from '@/components/cards/PatientsBreakdownCard.vue'
+import PatientsTransitionCard from '@/components/cards/PatientsTransitionCard.vue'
+import PatientsDetailCard from '@/components/cards/PatientsDetailCard.vue'
+import InspectionsTransitionCard from '@/components/cards/InspectionsTransitionCard.vue'
+import PatientsByAgeCard from '@/components/cards/PatientsByAgeCard.vue'
+import SickbedsUsedRateCard from '@/components/cards/SickbedsUsedRateCard.vue'
+import ConsultationsTransitionCard from '@/components/cards/ConsultationsTransitionCard.vue'
 
 export default {
   components: {
-    ConfirmedCasesDetailsCard,
-    ConfirmedCasesNumberCard,
-    ConfirmedCasesAttributesCard,
-    TestedNumberCard,
-    AgeCard,
-    SickbedsSummaryCard,
-    ConsultationDeskReportsNumberCard
+    PatientsBreakdownCard,
+    PatientsTransitionCard,
+    PatientsDetailCard,
+    InspectionsTransitionCard,
+    PatientsByAgeCard,
+    SickbedsUsedRateCard,
+    ConsultationsTransitionCard
   },
   async fetch({ store, app: { $axios } }) {
     await $axios.get(process.env.apiUrl).then(response => {

@@ -26,13 +26,13 @@
     </div>
     <whats-new :items="newsItems" />
     <v-row class="DataBlock">
-      <confirmed-cases-details-card />
-      <confirmed-cases-number-card />
-      <confirmed-cases-attributes-card />
-      <tested-number-card />
-      <age-card />
-      <sickedbeds-summary-card />
-      <consultation-desk-reports-number-card />
+      <patients-breakdown-card />
+      <patients-transition-card />
+      <patients-detail-card />
+      <inspections-transition-card />
+      <patients-by-age-card />
+      <sickbeds-used-rate-card />
+      <consultations-transition-card />
     </v-row>
   </div>
 </template>
@@ -42,25 +42,25 @@ import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 import PageHeader from '@/components/PageHeader.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
-import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
-import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
-import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
-import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
-import AgeCard from '@/components/cards/AgeCard.vue'
-import SickedbedsSummaryCard from '@/components/cards/SickbedsSummaryCard.vue'
-import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
+import PatientsBreakdownCard from '@/components/cards/PatientsBreakdownCard.vue'
+import PatientsTransitionCard from '@/components/cards/PatientsTransitionCard.vue'
+import PatientsDetailCard from '@/components/cards/PatientsDetailCard.vue'
+import InspectionsTransitionCard from '@/components/cards/InspectionsTransitionCard.vue'
+import PatientsByAgeCard from '@/components/cards/PatientsByAgeCard.vue'
+import SickbedsUsedRateCard from '@/components/cards/SickbedsUsedRateCard.vue'
+import ConsultationsTransitionCard from '@/components/cards/ConsultationsTransitionCard.vue'
 
 export default Vue.extend({
   components: {
     PageHeader,
     WhatsNew,
-    ConfirmedCasesDetailsCard,
-    ConfirmedCasesNumberCard,
-    ConfirmedCasesAttributesCard,
-    TestedNumberCard,
-    AgeCard,
-    SickedbedsSummaryCard,
-    ConsultationDeskReportsNumberCard
+    PatientsBreakdownCard,
+    PatientsTransitionCard,
+    PatientsDetailCard,
+    InspectionsTransitionCard,
+    PatientsByAgeCard,
+    SickbedsUsedRateCard,
+    ConsultationsTransitionCard
   },
   async fetch({ store, app: { $axios } }) {
     await $axios.get(process.env.apiUrl).then((response: any) => {
