@@ -3,7 +3,7 @@
     <patients-breakdown-card
       v-if="this.$route.params.card == 'details-of-confirmed-cases'"
     />
-    <confirmed-cases-number-card
+    <patients-transition-card
       v-else-if="this.$route.params.card == 'number-of-confirmed-cases'"
     />
     <patients-detail-card
@@ -27,7 +27,7 @@
 
 <script>
 import PatientsBreakdownCard from '@/components/cards/PatientsBreakdownCard.vue'
-import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
+import PatientsTransitionCard from '@/components/cards/PatientsTransitionCard.vue'
 import PatientsDetailCard from '@/components/cards/PatientsDetailCard.vue'
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import AgeCard from '@/components/cards/AgeCard.vue'
@@ -37,7 +37,7 @@ import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDe
 export default {
   components: {
     PatientsBreakdownCard,
-    ConfirmedCasesNumberCard,
+    PatientsTransitionCard,
     PatientsDetailCard,
     TestedNumberCard,
     AgeCard,
