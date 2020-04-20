@@ -9,7 +9,7 @@
     <patients-detail-card
       v-else-if="this.$route.params.card == 'attributes-of-confirmed-cases'"
     />
-    <tested-number-card
+    <inspections-transition-card
       v-else-if="this.$route.params.card == 'number-of-tested-cases'"
     />
     <age-card v-else-if="this.$route.params.card == 'patients-by-age'" />
@@ -29,7 +29,7 @@
 import PatientsBreakdownCard from '@/components/cards/PatientsBreakdownCard.vue'
 import PatientsTransitionCard from '@/components/cards/PatientsTransitionCard.vue'
 import PatientsDetailCard from '@/components/cards/PatientsDetailCard.vue'
-import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
+import InspectionsTransitionCard from '@/components/cards/InspectionsTransitionCard.vue'
 import AgeCard from '@/components/cards/AgeCard.vue'
 import SickbedsUsedRateCard from '@/components/cards/SickbedsUsedRateCard.vue'
 import ConsultationsTransitionCard from '@/components/cards/ConsultationsTransitionCard.vue'
@@ -39,7 +39,7 @@ export default {
     PatientsBreakdownCard,
     PatientsTransitionCard,
     PatientsDetailCard,
-    TestedNumberCard,
+    InspectionsTransitionCard,
     AgeCard,
     SickbedsUsedRateCard,
     ConsultationsTransitionCard
