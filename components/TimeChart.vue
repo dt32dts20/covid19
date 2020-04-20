@@ -12,7 +12,15 @@
     </template>
     <bar
       :ref="'barChart'"
-      :style="{ display: canvas ? 'block' : 'none' }"
+      :style="{ display: displayValue('bar') }"
+      :chart-id="chartId"
+      :chart-data="displayData"
+      :options="displayOption"
+      :height="240"
+    />
+    <line-chart
+      :ref="'lineChart'"
+      :style="{ display: displayValue('line') }"
       :chart-id="chartId"
       :chart-data="displayData"
       :options="displayOption"
@@ -63,6 +71,9 @@ type Data = {
 type Methods = {
   formatDayBeforeRatio: (dayBeforeRatio: number) => string
   isNotLoaded: () => boolean
+  displayValue: (chartType: 'bar' | 'line') => 'block' | 'none'
+  isTransition: () => boolean
+  isCumulative: () => boolean
 }
 type Computed = {
   displayCumulativeRatio: string
@@ -142,7 +153,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     },
     chartId: {
       type: String,
-      default: 'time-bar-chart'
+      default: 'line-chart'
     },
     chartData: {
       type: Array,
@@ -162,7 +173,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     }
   },
   data: () => ({
-    dataKind: 'transition',
+    dataKind: 'cumulative',
     canvas: true
   }),
   computed: {
@@ -193,7 +204,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         }
       }
 
-      if (this.dataKind === 'transition') {
+      if (this.isTransition()) {
         return {
           lText: `${this.chartData.slice(-1)[0].transition.toLocaleString()}`,
           sText: `${this.chartData.slice(-1)[0].label} ${this.$t(
@@ -233,7 +244,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       }
 
       const style = getGraphSeriesStyle(1)[0]
-      if (this.dataKind === 'transition') {
+      if (this.isTransition()) {
         return {
           labels: this.chartData.map(d => {
             return d.label
@@ -259,9 +270,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
             data: this.chartData.map(d => {
               return d.cumulative
             }),
-            backgroundColor: style.fillColor,
+            backgroundColor: '#edfff3',
             borderColor: style.strokeColor,
-            borderWidth: 1
+            borderWidth: 2
           }
         ]
       }
@@ -362,8 +373,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     },
     scaledTicksYAxisMax() {
       const yAxisMax = 1.2
-      const dataKind =
-        this.dataKind === 'transition' ? 'transition' : 'cumulative'
+      const dataKind = this.isTransition() ? 'transition' : 'cumulative'
       const values = this.chartData.map(d => d[dataKind])
       return Math.max(...values) * yAxisMax
     },
@@ -396,17 +406,19 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     },
     isNotLoaded() {
       return this.chartData.length === 0
-    }
-  },
-  mounted() {
-    const barChart = this.$refs.barChart as Vue
-    const barElement = barChart.$el
-    const canvas = barElement.querySelector('canvas')
-    const labelledbyId = `${this.titleId}-graph`
+    },
+    displayValue(chartType) {
+      if (chartType === 'bar') {
+        return this.isTransition() ? 'block' : 'none'
+      }
 
-    if (canvas) {
-      canvas.setAttribute('role', 'img')
-      canvas.setAttribute('aria-labelledby', labelledbyId)
+      return this.isCumulative() ? 'block' : 'none'
+    },
+    isTransition() {
+      return this.dataKind === 'transition'
+    },
+    isCumulative() {
+      return this.dataKind === 'cumulative'
     }
   }
 }

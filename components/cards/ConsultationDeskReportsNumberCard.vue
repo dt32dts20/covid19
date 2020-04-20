@@ -1,9 +1,9 @@
 <template>
   <v-col cols="12" md="6" class="DataCard">
-    <time-bar-chart
+    <time-chart
       :title="$t('相談窓口相談件数')"
       :title-id="'number-of-reports-to-covid19-consultation-desk'"
-      :chart-id="'time-bar-chart-querents'"
+      :chart-id="'time-chart-querents'"
       :chart-data="querentsGraph"
       :date="date"
       :unit="$t('件.reports')"
@@ -15,11 +15,11 @@
 
 <script>
 import formatGraph from '@/utils/formatGraph'
-import TimeBarChart from '@/components/TimeBarChart.vue'
+import TimeChart from '@/components/TimeChart.vue'
 
 export default {
   components: {
-    TimeBarChart
+    TimeChart
   },
   data() {
     return {
