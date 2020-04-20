@@ -16,7 +16,7 @@
     <sickbeds-summary-card
       v-else-if="this.$route.params.card == 'patietns-and-sickedbeds'"
     />
-    <consultation-desk-reports-number-card
+    <consultations-transition-card
       v-else-if="
         this.$route.params.card ==
           'number-of-reports-to-covid19-consultation-desk'
@@ -32,7 +32,7 @@ import PatientsDetailCard from '@/components/cards/PatientsDetailCard.vue'
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import AgeCard from '@/components/cards/AgeCard.vue'
 import SickbedsSummaryCard from '@/components/cards/SickbedsSummaryCard.vue'
-import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
+import ConsultationsTransitionCard from '@/components/cards/ConsultationsTransitionCard.vue'
 
 export default {
   components: {
@@ -42,7 +42,7 @@ export default {
     TestedNumberCard,
     AgeCard,
     SickbedsSummaryCard,
-    ConsultationDeskReportsNumberCard
+    ConsultationsTransitionCard
   },
   async fetch({ store, app: { $axios } }) {
     await $axios.get(process.env.apiUrl).then(response => {

@@ -32,7 +32,7 @@
       <tested-number-card />
       <age-card />
       <sickedbeds-summary-card />
-      <consultation-desk-reports-number-card />
+      <consultations-transition-card />
     </v-row>
   </div>
 </template>
@@ -48,7 +48,7 @@ import PatientsDetailCard from '@/components/cards/PatientsDetailCard.vue'
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import AgeCard from '@/components/cards/AgeCard.vue'
 import SickedbedsSummaryCard from '@/components/cards/SickbedsSummaryCard.vue'
-import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
+import ConsultationsTransitionCard from '@/components/cards/ConsultationsTransitionCard.vue'
 
 export default Vue.extend({
   components: {
@@ -60,7 +60,7 @@ export default Vue.extend({
     TestedNumberCard,
     AgeCard,
     SickedbedsSummaryCard,
-    ConsultationDeskReportsNumberCard
+    ConsultationsTransitionCard
   },
   async fetch({ store, app: { $axios } }) {
     await $axios.get(process.env.apiUrl).then((response: any) => {
