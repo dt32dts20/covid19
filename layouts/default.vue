@@ -84,6 +84,9 @@ export default Vue.extend({
     const { htmlAttrs } = this.$nuxtI18nSeo()
     return {
       htmlAttrs,
+      titleTemplate: `%s | ${this.$t('大分県')} ${this.$t(
+        '新型コロナウイルス感染症'
+      )}${this.$t('対策サイト')}`,
       link: [
         {
           rel: 'canonical',
