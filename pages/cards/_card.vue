@@ -10,7 +10,11 @@
       v-else-if="this.$route.params.card == 'attributes-of-confirmed-cases'"
     />
     <tested-number-card
-      v-else-if="this.$route.params.card == 'number-of-tested'"
+      v-else-if="this.$route.params.card == 'number-of-tested-cases'"
+    />
+    <age-card v-else-if="this.$route.params.card == 'patients-by-age'" />
+    <sickbeds-summary-card
+      v-else-if="this.$route.params.card == 'patietns-and-sickedbeds'"
     />
     <consultation-desk-reports-number-card
       v-else-if="
@@ -26,6 +30,8 @@ import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsC
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
+import AgeCard from '@/components/cards/AgeCard.vue'
+import SickbedsSummaryCard from '@/components/cards/SickbedsSummaryCard.vue'
 import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDeskReportsNumberCard.vue'
 
 export default {
@@ -34,7 +40,14 @@ export default {
     ConfirmedCasesNumberCard,
     ConfirmedCasesAttributesCard,
     TestedNumberCard,
+    AgeCard,
+    SickbedsSummaryCard,
     ConsultationDeskReportsNumberCard
+  },
+  async fetch({ store, app: { $axios } }) {
+    await $axios.get(process.env.apiUrl).then(response => {
+      store.commit('setData', response.data)
+    })
   },
   data() {
     let title
@@ -48,7 +61,13 @@ export default {
       case 'attributes-of-confirmed-cases':
         title = this.$t('陽性患者の属性')
         break
-      case 'number-of-tested':
+      case 'patients-by-age':
+        title = this.$t('年代別陽性患者数')
+        break
+      case 'patietns-and-sickedbeds':
+        title = this.$t('入院患者数と病床数')
+        break
+      case 'number-of-tested-cases':
         title = this.$t('検査実施数')
         break
       case 'number-of-reports-to-covid19-consultation-desk':
