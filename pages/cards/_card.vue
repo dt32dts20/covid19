@@ -36,6 +36,11 @@ export default {
     TestedNumberCard,
     ConsultationDeskReportsNumberCard
   },
+  async fetch({ store, app: { $axios } }) {
+    await $axios.get(process.env.apiUrl).then(response => {
+      store.commit('setData', response.data)
+    })
+  },
   data() {
     let title
     switch (this.$route.params.card) {
