@@ -31,7 +31,7 @@
       <patients-detail-card />
       <tested-number-card />
       <age-card />
-      <sickedbeds-summary-card />
+      <sickbeds-used-rate-card />
       <consultations-transition-card />
     </v-row>
   </div>
@@ -47,7 +47,7 @@ import PatientsTransitionCard from '@/components/cards/PatientsTransitionCard.vu
 import PatientsDetailCard from '@/components/cards/PatientsDetailCard.vue'
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import AgeCard from '@/components/cards/AgeCard.vue'
-import SickedbedsSummaryCard from '@/components/cards/SickbedsSummaryCard.vue'
+import SickbedsUsedRateCard from '@/components/cards/SickbedsUsedRateCard.vue'
 import ConsultationsTransitionCard from '@/components/cards/ConsultationsTransitionCard.vue'
 
 export default Vue.extend({
@@ -59,7 +59,7 @@ export default Vue.extend({
     PatientsDetailCard,
     TestedNumberCard,
     AgeCard,
-    SickedbedsSummaryCard,
+    SickbedsUsedRateCard,
     ConsultationsTransitionCard
   },
   async fetch({ store, app: { $axios } }) {
