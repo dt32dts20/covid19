@@ -26,7 +26,7 @@
     </div>
     <whats-new :items="newsItems" />
     <v-row class="DataBlock">
-      <confirmed-cases-details-card />
+      <patients-breakdown-card />
       <confirmed-cases-number-card />
       <patients-detail-card />
       <tested-number-card />
@@ -42,7 +42,7 @@ import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 import PageHeader from '@/components/PageHeader.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
-import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
+import PatientsBreakdownCard from '@/components/cards/PatientsBreakdownCard.vue'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import PatientsDetailCard from '@/components/cards/PatientsDetailCard.vue'
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
@@ -54,7 +54,7 @@ export default Vue.extend({
   components: {
     PageHeader,
     WhatsNew,
-    ConfirmedCasesDetailsCard,
+    PatientsBreakdownCard,
     ConfirmedCasesNumberCard,
     PatientsDetailCard,
     TestedNumberCard,

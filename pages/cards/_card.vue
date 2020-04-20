@@ -1,6 +1,6 @@
 <template>
   <div>
-    <confirmed-cases-details-card
+    <patients-breakdown-card
       v-if="this.$route.params.card == 'details-of-confirmed-cases'"
     />
     <confirmed-cases-number-card
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
+import PatientsBreakdownCard from '@/components/cards/PatientsBreakdownCard.vue'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
 import PatientsDetailCard from '@/components/cards/PatientsDetailCard.vue'
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
@@ -36,7 +36,7 @@ import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDe
 
 export default {
   components: {
-    ConfirmedCasesDetailsCard,
+    PatientsBreakdownCard,
     ConfirmedCasesNumberCard,
     PatientsDetailCard,
     TestedNumberCard,
