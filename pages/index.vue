@@ -30,7 +30,7 @@
       <patients-transition-card />
       <patients-detail-card />
       <inspections-transition-card />
-      <age-card />
+      <patients-by-age-card />
       <sickbeds-used-rate-card />
       <consultations-transition-card />
     </v-row>
@@ -46,7 +46,7 @@ import PatientsBreakdownCard from '@/components/cards/PatientsBreakdownCard.vue'
 import PatientsTransitionCard from '@/components/cards/PatientsTransitionCard.vue'
 import PatientsDetailCard from '@/components/cards/PatientsDetailCard.vue'
 import InspectionsTransitionCard from '@/components/cards/InspectionsTransitionCard.vue'
-import AgeCard from '@/components/cards/AgeCard.vue'
+import PatientsByAgeCard from '@/components/cards/PatientsByAgeCard.vue'
 import SickbedsUsedRateCard from '@/components/cards/SickbedsUsedRateCard.vue'
 import ConsultationsTransitionCard from '@/components/cards/ConsultationsTransitionCard.vue'
 
@@ -58,7 +58,7 @@ export default Vue.extend({
     PatientsTransitionCard,
     PatientsDetailCard,
     InspectionsTransitionCard,
-    AgeCard,
+    PatientsByAgeCard,
     SickbedsUsedRateCard,
     ConsultationsTransitionCard
   },
