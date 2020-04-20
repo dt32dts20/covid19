@@ -29,7 +29,7 @@ export default {
     },
     {
       code: 'th',
-      name: 'Thai',
+      name: 'ภาษาไทย',
       iso: 'th-TH',
       file: 'th.json',
       description: 'Thai'
