@@ -6,7 +6,7 @@
     <confirmed-cases-number-card
       v-else-if="this.$route.params.card == 'number-of-confirmed-cases'"
     />
-    <confirmed-cases-attributes-card
+    <patients-detail-card
       v-else-if="this.$route.params.card == 'attributes-of-confirmed-cases'"
     />
     <tested-number-card
@@ -28,7 +28,7 @@
 <script>
 import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
-import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
+import PatientsDetailCard from '@/components/cards/PatientsDetailCard.vue'
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import AgeCard from '@/components/cards/AgeCard.vue'
 import SickbedsSummaryCard from '@/components/cards/SickbedsSummaryCard.vue'
@@ -38,7 +38,7 @@ export default {
   components: {
     ConfirmedCasesDetailsCard,
     ConfirmedCasesNumberCard,
-    ConfirmedCasesAttributesCard,
+    PatientsDetailCard,
     TestedNumberCard,
     AgeCard,
     SickbedsSummaryCard,

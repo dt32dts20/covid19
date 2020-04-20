@@ -28,7 +28,7 @@
     <v-row class="DataBlock">
       <confirmed-cases-details-card />
       <confirmed-cases-number-card />
-      <confirmed-cases-attributes-card />
+      <patients-detail-card />
       <tested-number-card />
       <age-card />
       <sickedbeds-summary-card />
@@ -44,7 +44,7 @@ import PageHeader from '@/components/PageHeader.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
 import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
 import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
-import ConfirmedCasesAttributesCard from '@/components/cards/ConfirmedCasesAttributesCard.vue'
+import PatientsDetailCard from '@/components/cards/PatientsDetailCard.vue'
 import TestedNumberCard from '@/components/cards/TestedNumberCard.vue'
 import AgeCard from '@/components/cards/AgeCard.vue'
 import SickedbedsSummaryCard from '@/components/cards/SickbedsSummaryCard.vue'
@@ -56,7 +56,7 @@ export default Vue.extend({
     WhatsNew,
     ConfirmedCasesDetailsCard,
     ConfirmedCasesNumberCard,
-    ConfirmedCasesAttributesCard,
+    PatientsDetailCard,
     TestedNumberCard,
     AgeCard,
     SickedbedsSummaryCard,
