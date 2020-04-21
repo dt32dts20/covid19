@@ -311,6 +311,18 @@
   "大分市": "Oita City",
   "臼杵市": "Usuki City",
   "別府市": "Beppu City",
+  "竹田市": "Taketa City",
+  "日田市": "Hita City",
+  "中津市": "Nakatsu City",
+  "国東市": "Kunisaki City",
+  "津久見市": "Tsukumi City",
+  "豊後大野市": "Bungo-Ohno City",
+  "宇佐市": "Usa City",
+  "豊後高田市": "Bungotakada City",
+  "佐伯市": "Saiki City",
+  "由布市": "Yufu City",
+  "杵築市": "Kitsuki City",
+  "福岡県": "Fukuoka Prefecture",
   "年代別陽性患者数": "Number of patients by generation",
   "10代以下": "〜10s",
   "20代〜30代": "20s〜30s",
@@ -318,5 +330,7 @@
   "60代〜70代": "60s〜70s",
   "70代〜80代": "70s〜80s",
   "80代以上": "80s〜",
-  "言語選択": "Select language"
+  "言語選択": "Select language",
+  "お問い合わせ": "Contact us",
+  "病院以外で対応する場合もあるため、これが最大許容数ではありません。": "This is not all available sickbeds. Some sickbeds are handled outside the hospital."
 }
