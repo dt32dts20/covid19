@@ -111,58 +111,6 @@
               >
               {{ graphEmbedValue }}
             </div>
-
-            <div class="Buttons">
-              <button
-                :aria-label="$t('LINEで{title}のグラフをシェア', { title })"
-                @click="line"
-              >
-                <picture>
-                  <source
-                    srcset="/line.webp"
-                    type="image/webp"
-                    class="icon-resize line"
-                  />
-                  <img src="/line.png" alt="LINE" class="icon-resize line" />
-                </picture>
-              </button>
-
-              <button
-                :aria-label="$t('Twitterで{title}のグラフをシェア', { title })"
-                @click="twitter"
-              >
-                <picture>
-                  <source
-                    srcset="/twitter.webp"
-                    type="image/webp"
-                    class="icon-resize twitter"
-                  />
-                  <img
-                    src="/twitter.png"
-                    alt="Twitter"
-                    class="icon-resize twitter"
-                  />
-                </picture>
-              </button>
-
-              <button
-                :aria-label="$t('facebookで{title}のグラフをシェア', { title })"
-                @click="facebook"
-              >
-                <picture>
-                  <source
-                    srcset="/facebook.webp"
-                    type="image/webp"
-                    class="icon-resize facebook"
-                  />
-                  <img
-                    src="/facebook.png"
-                    alt="facebook"
-                    class="icon-resize facebook"
-                  />
-                </picture>
-              </button>
-            </div>
           </div>
         </div>
       </div>
@@ -183,7 +131,6 @@
 <script lang="ts">
 import Vue from 'vue'
 import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
-import { EventBus, TOGGLE_EVENT } from '@/utils/card-event-bus'
 
 export default Vue.extend({
   props: {
@@ -277,35 +224,6 @@ export default Vue.extend({
         permalink = location.protocol + '//' + location.host + permalink
       }
       return permalink
-    },
-    twitter() {
-      const url =
-        'https://twitter.com/intent/tweet?text=' +
-        this.title +
-        ' / ' +
-        this.$t('大分県') +
-        this.$t('新型コロナウイルス感染症') +
-        this.$t('対策サイト') +
-        '&url=' +
-        this.permalink(true) +
-        '&' +
-        'hashtags=StopCovid19JP'
-      window.open(url)
-    },
-    facebook() {
-      const url =
-        'https://www.facebook.com/sharer.php?u=' + this.permalink(true)
-      window.open(url)
-    },
-    line() {
-      const url =
-        'https://social-plugins.line.me/lineit/share?url=' +
-        this.permalink(true)
-      window.open(url)
-    },
-    toggleDetails() {
-      this.openDetails = !this.openDetails
-      EventBus.$emit(TOGGLE_EVENT, { dataView: this.$refs.dataView })
     }
   }
 })
