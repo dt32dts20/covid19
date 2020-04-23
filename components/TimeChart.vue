@@ -26,19 +26,30 @@
       :options="displayOption"
       :height="240"
     />
-    <v-data-table
-      :style="{ top: '-9999px', position: canvas ? 'fixed' : 'static' }"
-      :headers="tableHeaders"
-      :items="tableData"
-      :items-per-page="-1"
-      :hide-default-footer="true"
-      :height="240"
-      :fixed-header="true"
-      :disable-sort="true"
-      :mobile-breakpoint="0"
-      class="cardTable"
-      item-key="name"
-    />
+    <template v-slot:dataTable>
+      <v-data-table
+        :headers="tableHeaders"
+        :items="tableData"
+        :items-per-page="-1"
+        :hide-default-footer="true"
+        :height="240"
+        :fixed-header="true"
+        :disable-sort="true"
+        :mobile-breakpoint="0"
+        class="cardTable"
+        item-key="name"
+      >
+        <template v-slot:body="{ items }">
+          <tbody>
+            <tr v-for="item in items" :key="item.text">
+              <th>{{ item.text }}</th>
+              <td class="text-end">{{ item.transition }}</td>
+              <td class="text-end">{{ item.cumulative }}</td>
+            </tr>
+          </tbody>
+        </template>
+      </v-data-table>
+    </template>
     <template v-slot:infoPanel>
       <data-view-basic-info-panel
         :l-text="displayInfo.lText"
@@ -56,6 +67,7 @@
 import Vue from 'vue'
 import { TranslateResult } from 'vue-i18n'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
+import dayjs from 'dayjs'
 import { GraphDataType } from '@/utils/formatGraph'
 import DataView from '@/components/DataView.vue'
 import DataSelector from '@/components/DataSelector.vue'
@@ -380,16 +392,29 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     tableHeaders() {
       return [
         { text: this.$t('日付'), value: 'text' },
-        { text: this.title, value: '0' }
+        {
+          text: `${this.$t('日別')}`,
+          value: 'transition',
+          align: 'end'
+        },
+        {
+          text: `${this.$t('累計')}`,
+          value: 'cumulative',
+          align: 'end'
+        }
       ]
     },
     tableData() {
-      return this.displayData.datasets[0].data.map((_, i) => {
-        return Object.assign(
-          { text: this.displayData.labels[i] },
-          { '0': this.displayData.datasets[0].data[i] }
-        )
-      })
+      return this.chartData
+        .map((d, _) => {
+          return {
+            text: d.label,
+            transition: d.transition.toLocaleString(),
+            cumulative: d.cumulative.toLocaleString()
+          }
+        })
+        .sort((a, b) => dayjs(a.text).unix() - dayjs(b.text).unix())
+        .reverse()
     }
   },
   methods: {
@@ -425,3 +450,14 @@ const options: ThisTypedComponentOptionsWithRecordProps<
 
 export default Vue.extend(options)
 </script>
+
+<style module lang="scss">
+.DataView {
+  &Desc {
+    margin-top: 10px;
+    margin-bottom: 0 !important;
+    font-size: 12px;
+    color: $gray-3;
+  }
+}
+</style>
