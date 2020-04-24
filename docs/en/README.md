@@ -5,7 +5,7 @@
 [![大分県 新型コロナウイルス感染症対策サイト](https://user-images.githubusercontent.com/24912801/77246566-1f8fb180-6c6c-11ea-81b5-ebda94b8c163.png)](https://oita.stopcovid19.jp/)
 
 
-### [日本語](./../../README.md) | English 
+### [日本語](./../../README.md) | English
 
 
 ## How to Contribute
@@ -70,7 +70,7 @@ $ docker-compose run --rm app yarn install
 
 ### Detect production/others environment
 
-On the production environment, `'production'` is assigned to `process.env.GENERATE_ENV` variable, on the other case `'development'` is assigned to the variable.  
+On the production environment, `'production'` is assigned to `process.env.GENERATE_ENV` variable, on the other case `'development'` is assigned to the variable.
 Please use the variable to detect which enviroinment is used at the runtime.
 
 ### Deployment to Staging & Production Environments
@@ -83,10 +83,10 @@ and then the development site (https://dev-covid19-oita.netlify.com/) will be al
 
 ### Branch rules
 
-Pull Request is allowed only for `development`, `dev-i18n` and `dev-hotfix`.  
+Pull Request is allowed only for `development`, `dev-i18n` and `dev-hotfix`.
 Please use the following naming rules for the branch when sending a Pull Request.
 
-Feature implementation: feature/#{ISSUE_ID}-#{branch_title_name}  
+Feature implementation: feature/#{ISSUE_ID}-#{branch_title_name}
 Hotfix commit: hotfix/#{ISSUE_ID}-{branch_title_name}
 
 #### Basic branch
