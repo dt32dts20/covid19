@@ -1,5 +1,12 @@
 <template>
   <data-view :title="title" :title-id="titleId" :date="date" :url="url">
+    <template v-slot:button>
+      <ul :class="$style.notes">
+        <li>
+          {{ $t('年代が公開されていない患者は人数に含まれていません。') }}
+        </li>
+      </ul>
+    </template>
     <pie-chart
       :chart-id="chartId"
       :chart-data="displayData"
@@ -160,7 +167,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" module>
 .Graph-Desc {
   margin: 10px 0;
   font-size: 12px;
@@ -169,5 +176,17 @@ export default {
 }
 .link {
   text-decoration: none;
+}
+
+ul.notes {
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding-left: 0 !important;
+  font-size: 12px;
+  color: $gray-3;
+
+  > li {
+    list-style-type: none;
+  }
 }
 </style>
