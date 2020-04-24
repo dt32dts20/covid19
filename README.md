@@ -70,9 +70,9 @@ $ docker-compose run --rm app yarn install
 
 ### ステージング・本番環境への反映
 
-`master` ブランチがアップデートされると、自動的に `production` ブランチにHTML類がbuildされます。そして、本番サイト https://covid19-oita.netlify.com/ が更新されます。
+`master` ブランチがアップデートされると、自動的に `production` ブランチにHTML類がbuildされます。そして、本番サイト https://oita.stopcovid19.jp/ が更新されます。
 
-`development` ブランチがアップデートされると、自動的に `dev-pages` ブランチにHTML類がbuildされます。そして、開発用サイト https://dev-covid19-oita.netlify.com/ が更新されます。
+`development` ブランチがアップデートされると、自動的に `dev-pages` ブランチにHTML類がbuildされます。そして、開発用サイト https://dev-covid19-oita.netlify.app/ が更新されます。
 
 ### ブランチルール
 
@@ -80,12 +80,11 @@ development以外は Pull Request は禁止です。
 Pull Request を送る際の branch は、以下のネーミングルールでお願いします。
 
 機能追加系： feature/#{ISSUE_ID}-#{branch_title_name}
-ホットフィックス系: hotfix/#{ISSUE_ID}-#{branch_title_name}
 
 #### 基本的なブランチ
 | 目的 | ブランチ | 確認URL | 備考 |
 | ---- | -------- | ---- | ---- |
-| 開発 | development | https://dev-covid19-oita.netlify.com/ | base branch。基本はこちらに Pull Requestを送ってください |
+| 開発 | development | https://dev-covid19-oita.netlify.app/ | base branch。基本はこちらに Pull Requestを送ってください |
 | 本番 | master | https://oita.stopcovid19.jp/ | 管理者以外の Pull Request は禁止です |
 
 #### システムで利用しているブランチ
