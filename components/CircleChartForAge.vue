@@ -3,7 +3,7 @@
     <template v-slot:button>
       <ul :class="$style.notes">
         <li>
-          {{ $t('年代が公開されていない患者は人数に含まれていません。') }}
+          {{ $t('年代が公開されていない患者は含まれていません。') }}
         </li>
       </ul>
     </template>
