@@ -80,7 +80,6 @@ development以外は Pull Request は禁止です。
 Pull Request を送る際の branch は、以下のネーミングルールでお願いします。
 
 機能追加系： feature/#{ISSUE_ID}-#{branch_title_name}
-ホットフィックス系: hotfix/#{ISSUE_ID}-#{branch_title_name}
 
 #### 基本的なブランチ
 | 目的 | ブランチ | 確認URL | 備考 |
