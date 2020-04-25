@@ -7,8 +7,8 @@ const environment = process.env.NODE_ENV || 'development'
 const config: Configuration = {
   mode: 'spa',
   env: {
-    apiUrl: 'https://data-covid19-oita.netlify.app/json/data.json',
-    newsUrl: 'https://data-covid19-oita.netlify.app/json/news.json'
+    apiUrl: 'https://data-covid19-oita.netlify.app/data.json',
+    newsUrl: 'https://data-covid19-oita.netlify.app/news.json'
   },
   /*
    ** Headers of the page
@@ -115,7 +115,8 @@ const config: Configuration = {
     customVariables: ['~/assets/variables.scss'],
     defaultAssets: {
       icons: false
-    }
+    },
+    treeShake: true
   },
   googleAnalytics: {
     id: 'UA-104760868-6'
