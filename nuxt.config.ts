@@ -115,7 +115,8 @@ const config: Configuration = {
     customVariables: ['~/assets/variables.scss'],
     defaultAssets: {
       icons: false
-    }
+    },
+    treeShake: true
   },
   googleAnalytics: {
     id: 'UA-104760868-6'

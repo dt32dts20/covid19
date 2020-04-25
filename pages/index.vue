@@ -25,7 +25,7 @@
       />
     </div>
     <whats-new :items="newsItems" />
-    <v-row class="DataBlock">
+    <card-row class="DataBlock">
       <patients-breakdown-card />
       <patients-transition-card />
       <patients-detail-card />
@@ -34,7 +34,7 @@
       <patients-by-age-card />
       <sickbeds-used-rate-card />
       <consultations-transition-card />
-    </v-row>
+    </card-row>
   </div>
 </template>
 
@@ -43,6 +43,7 @@ import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 import PageHeader from '@/components/PageHeader.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
+import CardRow from '@/components/cards/CardRow.vue'
 import PatientsBreakdownCard from '@/components/cards/PatientsBreakdownCard.vue'
 import PatientsTransitionCard from '@/components/cards/PatientsTransitionCard.vue'
 import PatientsDetailCard from '@/components/cards/PatientsDetailCard.vue'
@@ -56,6 +57,7 @@ export default Vue.extend({
   components: {
     PageHeader,
     WhatsNew,
+    CardRow,
     PatientsBreakdownCard,
     PatientsTransitionCard,
     PatientsDetailCard,
