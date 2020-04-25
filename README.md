@@ -1,4 +1,7 @@
 # 大分県 新型コロナウイルス感染症対策サイト
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![](https://github.com/covid-oita/covid19/workflows/production%20deploy/badge.svg)
 
@@ -97,3 +100,27 @@ Pull Request を送る際の branch は、以下のネーミングルールで�
 - [政府CIOポータル](https://cio.go.jp/node/2581/): 東京都のオープンソースを活用した新型コロナウイルス感染症対策サイトとして紹介されました。
 
 - [TOSテレビ大分](https://www.tostv.jp/emergency/): コンテンツの一部が引用されました。
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/nojiri1098"><img src="https://avatars2.githubusercontent.com/u/24912801?v=4" width="100px;" alt=""/><br /><sub><b>Daiki Nojiri</b></sub></a><br /><a href="https://github.com/covid19-oita/covid19/commits?author=nojiri1098" title="Code">💻</a></td>
+    <td align="center"><a href="https://shmokmt.github.io/"><img src="https://avatars1.githubusercontent.com/u/32533860?v=4" width="100px;" alt=""/><br /><sub><b>Shoma Okamoto</b></sub></a><br /><a href="https://github.com/covid19-oita/covid19/commits?author=shmokmt" title="Code">💻</a></td>
+    <td align="center"><a href="https://twitter.com/varu_3"><img src="https://avatars1.githubusercontent.com/u/35091584?v=4" width="100px;" alt=""/><br /><sub><b>Subaru Nakamura</b></sub></a><br /><a href="https://github.com/covid19-oita/covid19/commits?author=varusan" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/satetsu"><img src="https://avatars3.githubusercontent.com/u/8390269?v=4" width="100px;" alt=""/><br /><sub><b>satetsu</b></sub></a><br /><a href="#business-satetsu" title="Business development">💼</a></td>
+    <td align="center"><a href="https://pnnutkung.github.io/blog"><img src="https://avatars1.githubusercontent.com/u/9101125?v=4" width="100px;" alt=""/><br /><sub><b>Pipatpol Tanavongchinda</b></sub></a><br /><a href="#translation-PNNutkung" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://nakaokarei.github.io/my_portfolio"><img src="https://avatars0.githubusercontent.com/u/39183069?v=4" width="100px;" alt=""/><br /><sub><b>Nakaoka Rei</b></sub></a><br /><a href="#translation-NakaokaRei" title="Translation">🌍</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
