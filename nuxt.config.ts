@@ -105,7 +105,13 @@ const config: Configuration = {
     ['nuxt-i18n', i18n],
     'nuxt-svg-loader',
     'nuxt-purgecss',
-    ['vue-scrollto/nuxt', { duration: 1000, offset: -72 }]
+    ['vue-scrollto/nuxt', { duration: 1000, offset: -72 }],
+    [
+      'nuxt-env',
+      {
+        keys: ['apiUrl', 'newsUrl']
+      }
+    ]
   ],
   /*
    ** vuetify module configuration

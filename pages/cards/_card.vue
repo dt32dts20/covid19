@@ -51,8 +51,8 @@ export default {
     SickbedsUsedRateCard,
     ConsultationsTransitionCard
   },
-  async fetch({ store, app: { $axios } }) {
-    await $axios.get(process.env.apiUrl).then(response => {
+  async fetch({ store, app }) {
+    await app.$axios.get(app.$env.apiUrl).then(response => {
       store.commit('setData', response.data)
     })
   },

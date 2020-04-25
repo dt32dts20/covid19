@@ -67,11 +67,11 @@ export default Vue.extend({
     SickbedsUsedRateCard,
     ConsultationsTransitionCard
   },
-  async fetch({ store, app: { $axios } }) {
-    await $axios.get(process.env.apiUrl).then((response: any) => {
+  async fetch({ store, app }) {
+    await app.$axios.get(app.$env.apiUrl).then((response: any) => {
       store.commit('setData', response.data)
     })
-    await $axios.get(process.env.newsUrl).then((response: any) => {
+    await app.$axios.get(app.$env.newsUrl).then((response: any) => {
       store.commit('setNews', response.data)
     })
   },
