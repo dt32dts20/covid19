@@ -45,6 +45,15 @@
       "contributions": [
         "business"
       ]
+    },
+    {
+      "login": "NakaokaRei",
+      "name": "Nakaoka Rei",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/39183069?v=4",
+      "profile": "https://nakaokarei.github.io/my_portfolio",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
   "contributorsPerLine": 7
