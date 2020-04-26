@@ -23,7 +23,7 @@
             :options="displayOption"
             :plugins="scrollPlugin"
             :height="240"
-            :width="chartWidth"
+            :width="this.$env.chartWidth"
             :style="{ display: displayValue('bar') }"
           />
           <line-chart
@@ -33,21 +33,11 @@
             :options="displayOption"
             :plugins="scrollPlugin"
             :height="240"
-            :width="chartWidth"
+            :width="this.$env.chartWidth"
             :style="{ display: displayValue('line') }"
           />
         </div>
       </div>
-      <bar
-        class="sticky-legend"
-        :style="{ display: canvas ? 'block' : 'none' }"
-        :chart-id="`${chartId}-header`"
-        :chart-data="displayDataHeader"
-        :options="displayOptionHeader"
-        :plugins="yAxesBgPlugin"
-        :height="240"
-        :width="chartWidth"
-      />
     </div>
     <template v-slot:dataTable>
       <v-data-table
