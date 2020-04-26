@@ -1,6 +1,6 @@
 # 大分県 新型コロナウイルス感染症対策サイト
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![](https://github.com/covid-oita/covid19/workflows/production%20deploy/badge.svg)
@@ -113,6 +113,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/nojiri1098"><img src="https://avatars2.githubusercontent.com/u/24912801?v=4" width="100px;" alt=""/><br /><sub><b>Daiki Nojiri</b></sub></a><br /><a href="https://github.com/covid19-oita/covid19/commits?author=nojiri1098" title="Code">💻</a></td>
     <td align="center"><a href="https://twitter.com/varu_3"><img src="https://avatars1.githubusercontent.com/u/35091584?v=4" width="100px;" alt=""/><br /><sub><b>Subaru Nakamura</b></sub></a><br /><a href="https://github.com/covid19-oita/covid19/commits?author=varusan" title="Code">💻</a></td>
     <td align="center"><a href="https://shmokmt.github.io/"><img src="https://avatars1.githubusercontent.com/u/32533860?v=4" width="100px;" alt=""/><br /><sub><b>Shoma Okamoto</b></sub></a><br /><a href="https://github.com/covid19-oita/covid19/commits?author=shmokmt" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/satetsu"><img src="https://avatars3.githubusercontent.com/u/8390269?v=4" width="100px;" alt=""/><br /><sub><b>satetsu</b></sub></a><br /><a href="#business-satetsu" title="Business development">💼</a></td>
   </tr>
 </table>
 
