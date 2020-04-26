@@ -1,0 +1,69 @@
+{
+  "projectName": "covid19",
+  "projectOwner": "covid19-oita",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "nojiri1098",
+      "name": "Daiki Nojiri",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/24912801?v=4",
+      "profile": "https://github.com/nojiri1098",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "varusan",
+      "name": "Subaru Nakamura",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/35091584?v=4",
+      "profile": "https://twitter.com/varu_3",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "shmokmt",
+      "name": "Shoma Okamoto",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/32533860?v=4",
+      "profile": "https://shmokmt.github.io/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "satetsu",
+      "name": "satetsu",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/8390269?v=4",
+      "profile": "https://github.com/satetsu",
+      "contributions": [
+        "business"
+      ]
+    },
+    {
+      "login": "NakaokaRei",
+      "name": "Nakaoka Rei",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/39183069?v=4",
+      "profile": "https://nakaokarei.github.io/my_portfolio",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "PNNutkung",
+      "name": "Pipatpol Tanavongchinda",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/9101125?v=4",
+      "profile": "https://pnnutkung.github.io/blog",
+      "contributions": [
+        "translation"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
