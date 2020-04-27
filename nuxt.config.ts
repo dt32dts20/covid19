@@ -7,7 +7,6 @@ const environment = process.env.NODE_ENV || 'development'
 const config: Configuration = {
   mode: 'spa',
   env: {
-    chartWidth: '600',
     apiUrl: 'https://data-covid19-oita.netlify.app/json/data.json',
     newsUrl: 'https://data-covid19-oita.netlify.app/json/news.json'
   },
@@ -110,7 +109,7 @@ const config: Configuration = {
     [
       'nuxt-env',
       {
-        keys: ['chartWidth', 'apiUrl', 'newsUrl']
+        keys: ['apiUrl', 'newsUrl']
       }
     ]
   ],

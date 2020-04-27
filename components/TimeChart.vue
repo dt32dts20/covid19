@@ -23,7 +23,7 @@
             :options="displayOption"
             :plugins="scrollPlugin"
             :height="240"
-            :width="this.$env.chartWidth"
+            :width="graghWidth"
             :style="{ display: displayValue('bar') }"
           />
           <line-chart
@@ -33,7 +33,7 @@
             :options="displayOption"
             :plugins="scrollPlugin"
             :height="240"
-            :width="this.$env.chartWidth"
+            :width="graghWidth"
             :style="{ display: displayValue('line') }"
           />
         </div>
@@ -135,6 +135,7 @@ type Computed = {
     transition: string
     cumulative: string
   }[]
+  graghWidth: number
 }
 type Props = {
   title: string
@@ -510,6 +511,11 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         })
         .sort((a, b) => dayjs(a.text).unix() - dayjs(b.text).unix())
         .reverse()
+    },
+    graghWidth() {
+      const window = this.chartWidth ? this.chartWidth : 0
+      const calc = this.displayData.labels!.length * 11
+      return Math.max(window, calc)
     }
   },
   methods: {
