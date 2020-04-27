@@ -37,6 +37,15 @@
             :style="{ display: displayValue('line') }"
           />
         </div>
+        <bar
+          class="sticky-legend"
+          :style="{ display: canvas ? 'block' : 'none' }"
+          :chart-id="`${chartId}-header`"
+          :chart-data="displayDataHeader"
+          :options="displayOptionHeader"
+          :plugins="yAxesBgPlugin"
+          :height="240"
+        />
       </div>
     </div>
     <template v-slot:dataTable>
