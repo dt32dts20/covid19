@@ -9,6 +9,9 @@
     <patients-detail-card
       v-else-if="this.$route.params.card == 'attributes-of-confirmed-cases'"
     />
+    <patients-by-residence
+      v-else-if="this.$route.params.card == 'patients-by-residence'"
+    />
     <inspections-transition-card
       v-else-if="this.$route.params.card == 'number-of-tested-cases'"
     />
@@ -31,6 +34,7 @@
 import PatientsBreakdownCard from '@/components/cards/PatientsBreakdownCard.vue'
 import PatientsTransitionCard from '@/components/cards/PatientsTransitionCard.vue'
 import PatientsDetailCard from '@/components/cards/PatientsDetailCard.vue'
+import PatientsByResidence from '@/components/cards/PatientsByResidence.vue'
 import InspectionsTransitionCard from '@/components/cards/InspectionsTransitionCard.vue'
 import PatientsByAgeCard from '@/components/cards/PatientsByAgeCard.vue'
 import SickbedsUsedRateCard from '@/components/cards/SickbedsUsedRateCard.vue'
@@ -41,13 +45,14 @@ export default {
     PatientsBreakdownCard,
     PatientsTransitionCard,
     PatientsDetailCard,
+    PatientsByResidence,
     InspectionsTransitionCard,
     PatientsByAgeCard,
     SickbedsUsedRateCard,
     ConsultationsTransitionCard
   },
-  async fetch({ store, app: { $axios } }) {
-    await $axios.get(process.env.apiUrl).then(response => {
+  async fetch({ store, app }) {
+    await app.$axios.get(app.$env.apiUrl).then(response => {
       store.commit('setData', response.data)
     })
   },
@@ -62,6 +67,9 @@ export default {
         break
       case 'attributes-of-confirmed-cases':
         title = this.$t('陽性患者の属性')
+        break
+      case 'patients-by-residence':
+        title = this.$t('居住地別陽性患者数')
         break
       case 'patients-by-age':
         title = this.$t('年代別陽性患者数')
