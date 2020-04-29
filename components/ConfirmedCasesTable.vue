@@ -8,7 +8,7 @@
           <span :class="$style.small">({{ $t('累計') }})</span>
           <span>
             <strong>{{ 累計 }}</strong>
-            <span :class="$style.unit">{{ $t('件.tested') }}</span>
+            <span :class="$style.unit">{{ $t('人') }}</span>
           </span>
         </div>
       </div>
@@ -19,7 +19,7 @@
               <span>{{ $t('入院中') }}</span>
               <span>
                 <strong>{{ 入院中 }}</strong>
-                <span :class="$style.unit">{{ $t('件.tested') }}</span>
+                <span :class="$style.unit">{{ $t('人') }}</span>
               </span>
             </div>
           </div>
@@ -30,7 +30,7 @@
               <span>{{ $t('死亡') }}</span>
               <span>
                 <strong>{{ 死亡 }}</strong>
-                <span :class="$style.unit">{{ $t('件.tested') }}</span>
+                <span :class="$style.unit">{{ $t('人') }}</span>
               </span>
             </div>
           </div>
@@ -41,7 +41,7 @@
               <span>{{ $t('退院') }}</span>
               <span>
                 <strong>{{ 退院 }}</strong>
-                <span :class="$style.unit">{{ $t('件.tested') }}</span>
+                <span :class="$style.unit">{{ $t('人') }}</span>
               </span>
             </div>
           </div>
