@@ -48,7 +48,7 @@
         />
       </div>
     </div>
-    <template v-if="!isTOS()" v-slot:dataTable>
+    <template v-slot:dataTable>
       <v-data-table
         :headers="tableHeaders"
         :items="tableData"
@@ -111,7 +111,6 @@ type Methods = {
   displayValue: (chartType: 'bar' | 'line') => 'block' | 'none'
   isTransition: () => boolean
   isCumulative: () => boolean
-  isTOS: () => boolean
 }
 
 type Computed = {
@@ -546,9 +545,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     },
     isCumulative() {
       return this.dataKind === 'cumulative'
-    },
-    isTOS() {
-      return location.href === 'https://www.tostv.jp/emergency/'
     }
   },
   mounted() {
