@@ -32,19 +32,7 @@ export default {
   methods: {
     setData() {
       const json = this.$store.state.data
-      const data = {
-        '10代未満': 1,
-        '10代': 3,
-        '20代': 19,
-        '30代': 19,
-        '40代': 19,
-        '50代': 19,
-        '60代': 9,
-        '70代': 7,
-        '80代': 4,
-        '90代以上': 1
-      }
-      this.ageGraph = formatVariableGraph(data)
+      this.ageGraph = formatVariableGraph(json.age.data)
       this.date = json.age.date
     }
   }
