@@ -146,6 +146,15 @@ export default {
         maintainAspectRatio: false,
         legend: {
           display: false
+        },
+        scales: {
+          xAxes: [
+            {
+              gridLines: {
+                display: false
+              }
+            }
+          ]
         }
       }
     }
