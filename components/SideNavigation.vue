@@ -121,6 +121,11 @@ export default Vue.extend({
         },
         {
           icon: 'mdi-domain',
+          title: this.$t('県内の支援状況'),
+          link: this.localePath('/support')
+        },
+        {
+          icon: 'mdi-domain',
           title: this.$t('中小企業の皆様へ'),
           link: 'https://oita-chusho.jp/pc/corona/',
           divider: true
