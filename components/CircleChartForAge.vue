@@ -150,6 +150,9 @@ export default {
         scales: {
           xAxes: [
             {
+              ticks: {
+                min: 0
+              },
               gridLines: {
                 display: false
               }
