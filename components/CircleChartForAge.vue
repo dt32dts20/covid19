@@ -7,7 +7,7 @@
         </li>
       </ul>
     </template>
-    <pie-chart
+    <horizontal-bar
       :chart-id="chartId"
       :chart-data="displayData"
       :options="displayOption"
@@ -103,22 +103,16 @@ export default {
         }
       }
 
-      const colorArray = ['#0e470e', '#1d8d1d', '#2bd52b', '#95ea95', '#dcf8dc']
       return {
         labels: this.chartData.map(d => {
           return this.$t(d.label)
         }),
         datasets: [
           {
-            label: this.chartData.map(d => {
-              return this.$t(d.label)
-            }),
             data: this.chartData.map(d => {
               return d.transition
             }),
-            backgroundColor: this.chartData.map((_, index) => {
-              return colorArray[index]
-            }),
+            backgroundColor: '#1d8d1d',
             borderWidth: 0
           }
         ]
@@ -151,7 +145,7 @@ export default {
         responsive: true,
         maintainAspectRatio: false,
         legend: {
-          display: true
+          display: false
         }
       }
     }
