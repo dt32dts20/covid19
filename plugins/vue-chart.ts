@@ -1,6 +1,6 @@
 import Vue, { PropType } from 'vue'
 import { ChartData, ChartOptions } from 'chart.js'
-import { Doughnut, Bar, Pie, Line, mixins } from 'vue-chartjs'
+import { Doughnut, Bar, HorizontalBar, Pie, Line, mixins } from 'vue-chartjs'
 import { Plugin } from '@nuxt/types'
 import { useDayjsAdapter } from './chartjs-adapter-dayjs'
 
@@ -61,6 +61,30 @@ const createCustomChart = () => {
     'bar',
     {
       extends: Bar,
+      mixins: [reactiveProp],
+      props: {
+        displayLegends: {
+          type: Array,
+          default: () => []
+        },
+        options: {
+          type: Object,
+          default: () => {}
+        }
+      },
+      watch: {
+        displayLegends: watchDisplayLegends
+      },
+      mounted(): void {
+        this.renderChart(this.chartData, this.options)
+      }
+    }
+  )
+
+  Vue.component<ChartVCData, ChartVCMethod, ChartVCComputed, ChartVCProps>(
+    'horizontal-bar',
+    {
+      extends: HorizontalBar,
       mixins: [reactiveProp],
       props: {
         displayLegends: {
