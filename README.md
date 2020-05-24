@@ -97,9 +97,13 @@ Pull Request を送る際の branch は、以下のネーミングルールで�
 
 
 ### メディア掲載実績
+- [大分県ホームページ](https://www.pref.oita.jp/site/covid19-oita/): リンクが掲載されました。
+
 - [政府CIOポータル](https://cio.go.jp/node/2581/): 東京都のオープンソースを活用した新型コロナウイルス感染症対策サイトとして紹介されました。
 
 - [TOSテレビ大分](https://www.tostv.jp/emergency/): コンテンツの一部が引用されました。
+
+- [PhotoPRESS COVID-19 Dashboard](https://photopress.jp/covid19-dashboard): コンテンツの一部が引用されました。
 
 ## Contributors ✨
 

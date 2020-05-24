@@ -97,6 +97,10 @@ Production | master | https://oita.stopcovid19.jp/ | Pull Requests other than Ad
 | Production site HTML | production | https://oita.stopcovid19.jp/ | Location where statically built HTML is located |
 
 ### Media Coverage
+- [COVID-19 Infomation (Oita Pref.)](https://www.pref.oita.jp/site/covid19-oita/): The link was posted.
+
 - [Government CIOs' Portal, Japan](https://cio.go.jp/node/2581): The site was introduced as a countermeasure against a new type of coronavirus infection using open source from the Tokyo Metropolitan Government.
 
 - [TOS TV Oita](https://www.tostv.jp/emergency/): Some of the site's content was cited.
+
+- [PhotoPRESS COVID-19 Dashboard](https://photopress.jp/covid19-dashboard): Some of the site's content was cited.
