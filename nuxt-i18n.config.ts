@@ -33,6 +33,13 @@ export default {
       iso: 'th-TH',
       file: 'th.json',
       description: 'Thai'
+    },
+    {
+      code: 'ko', // 本当はidだがエラーになるので
+      name: 'Orang indonesia',
+      iso: 'id-ID',
+      file: 'id.json',
+      description: 'Indonesia'
     }
   ]
 }
