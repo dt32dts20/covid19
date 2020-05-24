@@ -35,7 +35,7 @@ export default {
       description: 'Thai'
     },
     {
-      code: 'id',
+      code: 'ko', // 本当はidだがエラーになるので
       name: 'Orang indonesia',
       iso: 'id-ID',
       file: 'id.json',

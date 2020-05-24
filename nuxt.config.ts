@@ -159,16 +159,7 @@ const config: Configuration = {
   generate: {
     fallback: true,
     routes() {
-      const locales = [
-        'ja',
-        'en',
-        'th',
-        'id',
-        'zh-cn',
-        'zh-tw',
-        'ko',
-        'ja-basic'
-      ]
+      const locales = ['ja', 'en', 'th', 'ko']
       const pages = [
         '/cards/details-of-confirmed-cases',
         '/cards/number-of-confirmed-cases',
