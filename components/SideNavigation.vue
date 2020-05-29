@@ -120,11 +120,6 @@ export default Vue.extend({
           link: this.localePath('/')
         },
         {
-          icon: 'covidIcon',
-          title: this.$t('感染が疑われるときは'),
-          link: 'https://www.pref.oita.jp/uploaded/attachment/2072440.pdf'
-        },
-        {
           icon: 'mdi-domain',
           title: this.$t('中小企業の皆様へ'),
           link: 'https://oita-chusho.jp/pc/corona/',
