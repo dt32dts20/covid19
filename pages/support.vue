@@ -44,7 +44,7 @@ export default Vue.extend({
     const data = {
       headerItem: {
         icon: 'mdi-chart-timeline-variant',
-        title: this.$t('県内の最新感染動向')
+        title: this.$t('県内の最新支援状況')
       },
       newsItems: this.$store.state.news.newsItems
     }
@@ -52,7 +52,7 @@ export default Vue.extend({
   },
   head(): MetaInfo {
     return {
-      title: this.$t('県内の最新感染動向') as string
+      title: this.$t('県内の最新支援状況') as string
     }
   }
 })

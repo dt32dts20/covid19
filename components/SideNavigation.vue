@@ -121,7 +121,7 @@ export default Vue.extend({
         },
         {
           icon: 'mdi-domain',
-          title: this.$t('県内の支援状況'),
+          title: this.$t('県内の最新支援状況'),
           link: this.localePath('/support')
         },
         {
