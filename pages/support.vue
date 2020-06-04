@@ -3,10 +3,9 @@
     <page-header :icon="headerItem.icon" :title="headerItem.title" />
     <share-buttons />
     <card-row class="DataBlock">
-      <patients-transition-card />
       <usage-stats-by-industry-card />
-      <patients-by-age-card />
-      <sickbeds-used-rate-card />
+      <usage-stats-transition-card />
+      <subsidy-consultation-transition-card />
     </card-row>
   </div>
 </template>
@@ -17,20 +16,18 @@ import { MetaInfo } from 'vue-meta'
 import PageHeader from '@/components/PageHeader.vue'
 import ShareButtons from '@/components/ShareButtons.vue'
 import CardRow from '@/components/cards/CardRow.vue'
-import PatientsTransitionCard from '@/components/cards/PatientsTransitionCard.vue'
 import UsageStatsByIndustryCard from '@/components/cards/support/UsageStatsByIndustryCard.vue'
-import PatientsByAgeCard from '@/components/cards/PatientsByAgeCard.vue'
-import SickbedsUsedRateCard from '@/components/cards/SickbedsUsedRateCard.vue'
+import UsageStatsTransitionCard from '@/components/cards/support/UsageStatsTransitionCard.vue'
+import SubsidyConsultationTransitionCard from '@/components/cards/support/SubsidyConsultationTransitionCard.vue'
 
 export default Vue.extend({
   components: {
     PageHeader,
     ShareButtons,
     CardRow,
-    PatientsTransitionCard,
     UsageStatsByIndustryCard,
-    PatientsByAgeCard,
-    SickbedsUsedRateCard
+    UsageStatsTransitionCard,
+    SubsidyConsultationTransitionCard
   },
   async fetch({ store, app }) {
     await app.$axios.get(app.$env.apiUrl).then((response: any) => {
