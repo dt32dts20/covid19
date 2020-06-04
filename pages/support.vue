@@ -6,6 +6,7 @@
       <usage-stats-by-industry-card />
       <usage-stats-transition-card />
       <subsidy-consultation-transition-card />
+      <subsidy-application-transition-card />
     </card-row>
   </div>
 </template>
@@ -19,6 +20,7 @@ import CardRow from '@/components/cards/CardRow.vue'
 import UsageStatsByIndustryCard from '@/components/cards/support/UsageStatsByIndustryCard.vue'
 import UsageStatsTransitionCard from '@/components/cards/support/UsageStatsTransitionCard.vue'
 import SubsidyConsultationTransitionCard from '@/components/cards/support/SubsidyConsultationTransitionCard.vue'
+import SubsidyApplicationTransitionCard from '@/components/cards/support/SubsidyApplicationTransitionCard.vue'
 
 export default Vue.extend({
   components: {
@@ -27,7 +29,8 @@ export default Vue.extend({
     CardRow,
     UsageStatsByIndustryCard,
     UsageStatsTransitionCard,
-    SubsidyConsultationTransitionCard
+    SubsidyConsultationTransitionCard,
+    SubsidyApplicationTransitionCard
   },
   async fetch({ store, app }) {
     await app.$axios.get(app.$env.apiUrl).then((response: any) => {
