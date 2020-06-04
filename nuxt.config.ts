@@ -167,7 +167,8 @@ const config: Configuration = {
         '/cards/number-of-tested',
         '/cards/number-of-reports-to-covid19-consultation-desk',
         '/cards/predicted-number-of-toei-subway-passengers',
-        '/cards/agency'
+        '/cards/agency',
+        '/cards/usage-stats-by-indusry'
       ]
 
       const routes: string[] = []

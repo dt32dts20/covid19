@@ -3,8 +3,8 @@
     <page-header :icon="headerItem.icon" :title="headerItem.title" />
     <share-buttons />
     <card-row class="DataBlock">
-      <patients-breakdown-card />
       <patients-transition-card />
+      <usage-stats-by-industry-card />
       <patients-by-age-card />
       <sickbeds-used-rate-card />
     </card-row>
@@ -17,8 +17,8 @@ import { MetaInfo } from 'vue-meta'
 import PageHeader from '@/components/PageHeader.vue'
 import ShareButtons from '@/components/ShareButtons.vue'
 import CardRow from '@/components/cards/CardRow.vue'
-import PatientsBreakdownCard from '@/components/cards/PatientsBreakdownCard.vue'
 import PatientsTransitionCard from '@/components/cards/PatientsTransitionCard.vue'
+import UsageStatsByIndustryCard from '@/components/cards/support/UsageStatsByIndustryCard.vue'
 import PatientsByAgeCard from '@/components/cards/PatientsByAgeCard.vue'
 import SickbedsUsedRateCard from '@/components/cards/SickbedsUsedRateCard.vue'
 
@@ -27,8 +27,8 @@ export default Vue.extend({
     PageHeader,
     ShareButtons,
     CardRow,
-    PatientsBreakdownCard,
     PatientsTransitionCard,
+    UsageStatsByIndustryCard,
     PatientsByAgeCard,
     SickbedsUsedRateCard
   },
