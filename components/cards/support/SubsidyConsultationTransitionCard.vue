@@ -2,7 +2,7 @@
   <v-col cols="12" md="6" class="DataCard">
     <time-chart-for-subsidy
       :title="$t('雇用調整助成金の申請に関する相談件数')"
-      :title-id="'number-of-confirmed-cases'"
+      :title-id="'subsidy-consultation-transition'"
       :chart-id="'subsidy-consultation-transition'"
       :chart-data="patientsGraph"
       :date="date"

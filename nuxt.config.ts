@@ -168,7 +168,10 @@ const config: Configuration = {
         '/cards/number-of-reports-to-covid19-consultation-desk',
         '/cards/predicted-number-of-toei-subway-passengers',
         '/cards/agency',
-        '/cards/usage-stats-by-indusry'
+        '/cards/usage-stats-transition',
+        '/cards/usage-stats-by-indusry',
+        '/cards/subsidy-consultation-transition',
+        '/cards/subsidy-application-transition'
       ]
 
       const routes: string[] = []

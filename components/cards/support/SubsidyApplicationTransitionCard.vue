@@ -3,7 +3,7 @@
     <time-chart-for-subsidy-application
       :title="$t('雇用調整助成金 (申請書提出件数、支給決定件数)')"
       :title-id="'subsidy-application-transition'"
-      :chart-id="'time-chart-patients'"
+      :chart-id="'subsidy-application-transition'"
       :chart-data="patientsGraph"
       :date="date"
       :unit="$t('件.tested')"

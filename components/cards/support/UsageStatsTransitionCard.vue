@@ -4,8 +4,8 @@
       :title="
         $t('新型コロナウイルス関連の大分県における融資の利用状況 (融資実績)')
       "
-      :title-id="'number-of-confirmed-cases'"
-      :chart-id="'time-chart-patients'"
+      :title-id="'usage-stats-transition'"
+      :chart-id="'usage-stats-transition'"
       :chart-data="patientsGraph"
       :date="date"
       :unit="$t('億円')"
