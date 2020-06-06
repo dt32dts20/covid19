@@ -203,7 +203,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       // ② lasts[1]
       return {
         lText: sum.toLocaleString(),
-        sText: `うち 申請書提出件数${val1}${this.unit} 支給決定件数${val2}${this.unit}`,
+        sText: `うち ①${val1}${this.unit} ②${val2}${this.unit}`,
         unit: this.unit
       }
     },

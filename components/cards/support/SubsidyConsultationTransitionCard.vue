@@ -24,8 +24,8 @@ export default {
   },
   data() {
     const inspectionsItems = [
-      this.$t('労働局 (097-535-2100) への相談件数'),
-      this.$t('大分県 (0120-575-625) への相談件数')
+      this.$t('① 労働局 (097-535-2100) への相談件数'),
+      this.$t('② 大分県 (0120-575-625) への相談件数')
     ]
     const inspectionsLabels = ['5/1', '5/8', '5/15', '5/22', '5/29']
 
