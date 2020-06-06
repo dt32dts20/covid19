@@ -73,7 +73,6 @@ import DataViewTable from '@/components/DataViewTable.vue'
 import DataViewBasicInfoPanel from '@/components/DataViewBasicInfoPanel.vue'
 import { DisplayData, yAxesBgPlugin, scrollPlugin } from '@/plugins/vue-chart'
 import { getGraphSeriesStyle, SurfaceStyle } from '@/utils/colors'
-import { getComplementedDate } from '@/utils/formatDate'
 
 type Data = {
   canvas: boolean
@@ -199,8 +198,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       const val1 = this.sum(this.chartData[0])
       const val2 = this.sum(this.chartData[1])
       const sum = val1 + val2
-      // ① lasts[0]
-      // ② lasts[1]
       return {
         lText: sum.toLocaleString(),
         sText: `うち ①${val1}${this.unit} ②${val2}${this.unit}`,
@@ -223,7 +220,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       }
     },
     displayOption() {
-      const self = this
       const unit = this.unit
       const data = this.chartData
       const options: Chart.ChartOptions = {
@@ -236,16 +232,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               ].toLocaleString()
 
               const label = `${
-                this.dataLabels[tooltipItem.datasetIndex!]
+                this.items[tooltipItem.datasetIndex!]
               } : ${cases} ${unit}`
               return label
-            },
-            title(tooltipItem, data) {
-              const label = data.labels![tooltipItem[0].index!] as string
-              return self.$d(
-                new Date(getComplementedDate(label)),
-                'dateWithoutYear'
-              )
             }
           }
         },
