@@ -206,11 +206,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   }),
   computed: {
     displayInfo() {
-      const val1 = this.sum(this.chartData[0])
-      const val2 = this.sum(this.chartData[1])
+      const len = this.chartData[0].length
+      const val1 = this.chartData[0][len - 1]
+      const val2 = this.chartData[1][len - 1]
       const sum = val1 + val2
-      // ① lasts[0]
-      // ② lasts[1]
       return {
         lText: sum.toLocaleString(),
         sText: `うち ①${val1}${this.unit} ②${val2}${this.unit}`,

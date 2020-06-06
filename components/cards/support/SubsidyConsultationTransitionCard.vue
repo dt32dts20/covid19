@@ -25,7 +25,7 @@ export default {
   data() {
     const inspectionsItems = [
       this.$t('① 労働局 (097-535-2100) への相談件数'),
-      this.$t('② 大分県 (0120-575-625) への相談件数')
+      this.$t('② 大分県 (0120-575-626) への相談件数')
     ]
     const inspectionsLabels = ['5/1', '5/8', '5/15', '5/22', '5/29']
 
@@ -44,8 +44,8 @@ export default {
       const json = this.$store.state.data
       // const patientsGraph = formatGraph(json.patients_summary.data)
       this.patientsGraph = [
-        [0, 40, 122, 168, 72],
-        [63, 81, 69, 133, 144]
+        [63, 81, 69, 133, 144],
+        [0, 40, 122, 168, 72]
       ]
       this.date = json.patients_summary.date
     }

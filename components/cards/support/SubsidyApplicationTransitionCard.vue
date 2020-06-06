@@ -44,8 +44,8 @@ export default {
       const json = this.$store.state.data
       // const patientsGraph = formatGraph(json.patients_summary.data)
       this.patientsGraph = [
-        [0, 40, 72, 122, 132],
-        [63, 69, 81, 133, 144]
+        [63, 69, 81, 133, 144],
+        [0, 40, 72, 122, 132]
       ]
       this.date = json.patients_summary.date
     }

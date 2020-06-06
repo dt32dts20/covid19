@@ -36,8 +36,8 @@ export default {
       const json = this.$store.state.data
       // this.ageGraph = formatVariableGraph(json.age.data)
       this.ageGraph = formatVariableGraph({
-        飲食店: 189,
-        サービス業: 167,
+        飲食業: 189,
+        'サービス業 (宿泊除く)': 167,
         小売業: 154,
         卸売業: 132,
         建設業: 98,
