@@ -11,7 +11,9 @@
       :unit="$t('億円')"
       :items="inspectionsItems"
       :labels="inspectionsLabels"
-      :url="'https://data.bodik.jp/dataset/_covid19'"
+      :url="
+        'https://data.bodik.jp/dataset/_covid19_support/resource/9c609301-4800-4f06-a400-62ba5eb489ba'
+      "
     />
   </v-col>
 </template>

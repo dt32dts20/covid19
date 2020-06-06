@@ -9,7 +9,9 @@
       :unit="$t('件.tested')"
       :items="inspectionsItems"
       :labels="inspectionsLabels"
-      :url="'https://data.bodik.jp/dataset/_covid19'"
+      :url="
+        'https://data.bodik.jp/dataset/_covid19_support/resource/226c523f-178d-4180-8a1c-16e492757378'
+      "
     />
   </v-col>
 </template>

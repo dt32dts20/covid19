@@ -9,7 +9,9 @@
       :date="date"
       :unit="$t('件.tested')"
       :info="$t('累計値')"
-      :url="'https://data.bodik.jp/dataset/_covid19'"
+      :url="
+        'https://data.bodik.jp/dataset/_covid19_support/resource/a56764ef-baba-4972-8877-e773c24d27ca'
+      "
     />
   </v-col>
 </template>
