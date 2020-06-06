@@ -29,7 +29,7 @@
     </h4>
     <div class="LegendStickyChart">
       <div class="scrollable" :style="{ display: canvas ? 'block' : 'none' }">
-        <div :style="{ width: `${chartWidth}px` }">
+        <div :style="{ width: `${graphWidth}px` }">
           <bar
             :ref="'barChart'"
             :chart-id="chartId"
@@ -38,7 +38,6 @@
             :plugins="scrollPlugin"
             :display-legends="displayLegends"
             :height="240"
-            :width="chartWidth"
           />
         </div>
       </div>
@@ -51,7 +50,6 @@
         :plugins="yAxesBgPlugin"
         :display-legends="displayLegends"
         :height="240"
-        :width="chartWidth"
       />
     </div>
     <template v-slot:infoPanel>
@@ -103,6 +101,7 @@ type Computed = {
   displayDataHeader: DisplayData
   displayOptionHeader: Chart.ChartOptions
   scaledTicksYAxisMax: number
+  graphWidth: number
 }
 
 type Props = {
@@ -441,6 +440,11 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         max = Math.max(max, this.chartData[0][i] + this.chartData[1][i])
       }
       return max
+    },
+    graphWidth() {
+      const window = this.chartWidth ? this.chartWidth : 0
+      const calc = this.displayData.labels!.length * 50
+      return Math.max(window, calc)
     }
   },
   methods: {
