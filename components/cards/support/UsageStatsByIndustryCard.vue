@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     setData() {
-      const json = this.$store.state.data
+      // const json = this.$store.state.data
       // this.ageGraph = formatVariableGraph(json.age.data)
       this.ageGraph = formatVariableGraph({
         飲食業: 189,
@@ -47,7 +47,8 @@ export default {
         製造業: 64,
         その他: 12
       })
-      this.date = json.age.date
+      // this.date = json.patients_summary.date
+      this.date = '2020/06/06 18:09'
     }
   }
 }

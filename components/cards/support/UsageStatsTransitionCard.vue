@@ -45,13 +45,14 @@ export default {
   },
   methods: {
     setData() {
-      const json = this.$store.state.data
+      // const json = this.$store.state.data
       // const patientsGraph = formatGraph(json.patients_summary.data)
       this.patientsGraph = [
         [0, 23.4, 96.5, 124.3, 168.3],
         [99.0, 122.3, 125.8, 128.1, 132.3]
       ]
-      this.date = json.patients_summary.date
+      // this.date = json.patients_summary.date
+      this.date = '2020/06/06 18:09'
     }
   }
 }
