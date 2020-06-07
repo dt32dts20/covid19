@@ -145,27 +145,9 @@ export default {
         return {}
       }
 
-      const unitBed = this.unit
-      const unitPerson = this.$t('人')
-      const label = this.$t('病床数')
-      const chartData = this.chartData
       return {
         tooltips: {
-          displayColors: false,
-          callbacks: {
-            label(tooltipItem) {
-              const index = tooltipItem.index
-              const numerator = chartData[index].transition
-              const numeratorUnit = index === 1 ? unitBed : unitPerson
-              const denominator =
-                chartData[0].transition + chartData[1].transition
-              const denominatorLabel = label
-              return `${numerator} ${numeratorUnit} (${denominatorLabel}: ${denominator}${unitBed})`
-            },
-            title(tooltipItem, data) {
-              return data.labels[tooltipItem[0].index]
-            }
-          }
+          enabled: false
         },
         responsive: true,
         maintainAspectRatio: false,

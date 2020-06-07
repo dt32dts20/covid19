@@ -238,23 +238,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       }
     },
     displayOption() {
-      const unit = this.unit
-      const data = this.chartData
       const options: Chart.ChartOptions = {
         tooltips: {
-          displayColors: false,
-          callbacks: {
-            label: tooltipItem => {
-              const cases = data[tooltipItem.datasetIndex!][
-                tooltipItem.index!
-              ].toLocaleString()
-
-              const label = `${
-                this.items[tooltipItem.datasetIndex!]
-              } : ${cases} ${unit}`
-              return label
-            }
-          }
+          enabled: false
         },
         responsive: false,
         maintainAspectRatio: false,
