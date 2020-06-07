@@ -110,7 +110,8 @@ export default {
             datalabels: {
               color: 'white',
               font: {
-                size: '16'
+                size: '14',
+                weight: 'bold'
               }
             }
           }
