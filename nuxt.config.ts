@@ -83,6 +83,10 @@ const config: Configuration = {
     {
       src: '@/plugins/vuetify.ts',
       ssr: true
+    },
+    {
+      src: '~/plugins/chartjs-datalabels',
+      ssr: true
     }
   ],
   /*
