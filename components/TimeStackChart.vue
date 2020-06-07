@@ -85,11 +85,7 @@ type Data = {
   chartWidth: number | null
 }
 type Methods = {
-  sum: (array: number[]) => number
-  cumulative: (array: number[]) => number[]
   pickLastNumber: (chartDataArray: number[][]) => number[]
-  cumulativeSum: (chartDataArray: number[][]) => number[]
-  eachArraySum: (chartDataArray: number[][]) => number[]
   onClickLegend: (i: number) => void
 }
 
@@ -207,8 +203,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   computed: {
     displayInfo() {
       const lasts = this.pickLastNumber(this.chartData)
-      // ① lasts[0]
-      // ② lasts[1]
       return {
         lText: (lasts[0] + lasts[1]).toLocaleString(),
         sText: `うち ①${lasts[0]}${this.unit} ②${lasts[1]}${this.unit}`,
@@ -264,8 +258,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                   return label.split('/')[1]
                 }
               }
-              // #2384: If you set "type" to "time", make sure that the bars at both ends are not hidden.
-              // #2384: typeをtimeに設定する時はグラフの両端が見切れないか確認してください
             },
             {
               id: 'month',
@@ -457,38 +449,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       this.displayLegends[i] = !this.displayLegends[i]
       this.displayLegends = this.displayLegends.slice()
     },
-    cumulative(array: number[]): number[] {
-      const cumulativeArray: number[] = []
-      let patSum = 0
-      array.forEach(d => {
-        patSum += d
-        cumulativeArray.push(patSum)
-      })
-      return cumulativeArray
-    },
-    sum(array: number[]): number {
-      return array.reduce((acc, cur) => {
-        return acc + cur
-      })
-    },
     pickLastNumber(chartDataArray: number[][]) {
       return chartDataArray.map(array => {
         return array[array.length - 1]
       })
-    },
-    cumulativeSum(chartDataArray: number[][]) {
-      return chartDataArray.map(array => {
-        return array.reduce((acc, cur) => {
-          return acc + cur
-        })
-      })
-    },
-    eachArraySum(chartDataArray: number[][]) {
-      const sumArray: number[] = []
-      for (let i = 0; i < chartDataArray[0].length; i++) {
-        sumArray.push(chartDataArray[0][i] + chartDataArray[1][i])
-      }
-      return sumArray
     }
   },
   mounted() {
