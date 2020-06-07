@@ -129,7 +129,13 @@ export default {
             backgroundColor: this.chartData.map((_, index) => {
               return colorArray[index]
             }),
-            borderWidth: 0
+            borderWidth: 0,
+            datalabels: {
+              font: {
+                size: '20',
+                weight: 'bold'
+              }
+            }
           }
         ]
       }

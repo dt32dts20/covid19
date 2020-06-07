@@ -225,7 +225,14 @@ const options: ThisTypedComponentOptionsWithRecordProps<
             data: item,
             backgroundColor: graphSeries[index].fillColor,
             borderColor: graphSeries[index].strokeColor,
-            borderWidth: 1
+            borderWidth: 1,
+            datalabels: {
+              color: index === 0 ? 'white' : 'black',
+              font: {
+                size: '14',
+                weight: index === 0 ? 'bold' : 'normal'
+              }
+            }
           }
         })
       }
@@ -339,12 +346,22 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           {
             data: [this.displayData.datasets[0].data[n]],
             backgroundColor: 'transparent',
-            borderWidth: 0
+            borderWidth: 0,
+            datalabels: {
+              font: {
+                size: '0'
+              }
+            }
           },
           {
             data: [this.displayData.datasets[1].data[n]],
             backgroundColor: 'transparent',
-            borderWidth: 0
+            borderWidth: 0,
+            datalabels: {
+              font: {
+                size: '0'
+              }
+            }
           }
         ]
       }

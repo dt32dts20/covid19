@@ -257,7 +257,12 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               }),
               backgroundColor: style.fillColor,
               borderColor: style.strokeColor,
-              borderWidth: 1
+              borderWidth: 1,
+              datalabels: {
+                font: {
+                  size: '0'
+                }
+              }
             }
           ]
         }
@@ -272,7 +277,12 @@ const options: ThisTypedComponentOptionsWithRecordProps<
             }),
             backgroundColor: '#edfff3',
             borderColor: style.strokeColor,
-            borderWidth: 2
+            borderWidth: 2,
+            datalabels: {
+              font: {
+                size: '0'
+              }
+            }
           }
         ]
       }
@@ -375,7 +385,12 @@ const options: ThisTypedComponentOptionsWithRecordProps<
             {
               data: [Math.max(...this.chartData.map(d => d.transition))],
               backgroundColor: 'transparent',
-              borderWidth: 0
+              borderWidth: 0,
+              datalabels: {
+                font: {
+                  size: '0'
+                }
+              }
             }
           ]
         }
@@ -386,7 +401,12 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           {
             data: [Math.max(...this.chartData.map(d => d.cumulative))],
             backgroundColor: 'transparent',
-            borderWidth: 0
+            borderWidth: 0,
+            datalabels: {
+              font: {
+                size: '0'
+              }
+            }
           }
         ]
       }

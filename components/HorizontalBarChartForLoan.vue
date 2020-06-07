@@ -106,7 +106,13 @@ export default {
               return d.transition
             }),
             backgroundColor: '#1d8d1d',
-            borderWidth: 0
+            borderWidth: 0,
+            datalabels: {
+              color: 'white',
+              font: {
+                size: '16'
+              }
+            }
           }
         ]
       }
