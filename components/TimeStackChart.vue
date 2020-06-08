@@ -205,7 +205,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       const lasts = this.pickLastNumber(this.chartData)
       return {
         lText: (lasts[0] + lasts[1]).toLocaleString(),
-        sText: `うち ①${lasts[0]}${this.unit} ②${lasts[1]}${this.unit}`,
+        sText: `${this.$t('うち')} ①${lasts[0]}${this.unit} ②${lasts[1]}${
+          this.unit
+        }`,
         unit: this.unit
       }
     },

@@ -26,8 +26,8 @@ export default {
   },
   data() {
     const inspectionsItems = [
-      this.$t('① 申請書提出件数'),
-      this.$t('② 支給決定件数')
+      '① ' + this.$t('申請書提出件数'),
+      '② ' + this.$t('支給決定件数')
     ]
     const inspectionsLabels = ['5/1', '5/8', '5/15', '5/22', '5/29']
 

@@ -28,8 +28,8 @@ export default {
   },
   data() {
     const inspectionsItems = [
-      this.$t('① がんばろう！おおいた資金繰り応援資金'),
-      this.$t('② 新型コロナウイルス感染症緊急対策特別資金')
+      '① ' + this.$t('がんばろう！おおいた資金繰り応援資金'),
+      '② ' + this.$t('新型コロナウイルス感染症緊急対策特別資金')
     ]
     const inspectionsLabels = ['5/1', '5/8', '5/15', '5/22', '5/29']
 

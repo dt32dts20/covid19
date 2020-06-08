@@ -212,7 +212,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       const sum = val1 + val2
       return {
         lText: sum.toLocaleString(),
-        sText: `うち ①${val1}${this.unit} ②${val2}${this.unit}`,
+        sText: `${this.$t('うち')} ①${val1}${this.unit} ②${val2}${this.unit}`,
         unit: this.unit
       }
     },
