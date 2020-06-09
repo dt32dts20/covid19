@@ -4,11 +4,11 @@
       :title="$t('雇用調整助成金 (申請書提出件数、支給決定件数)')"
       :title-id="'subsidy-application-transition'"
       :chart-id="'subsidy-application-transition'"
-      :chart-data="patientsGraph"
+      :chart-data="chartData"
       :date="date"
       :unit="$t('件.tested')"
-      :items="inspectionsItems"
-      :labels="inspectionsLabels"
+      :items="legends"
+      :labels="xLabels"
       :url="
         'https://data.bodik.jp/dataset/_covid19_support/resource/226c523f-178d-4180-8a1c-16e492757378'
       "
@@ -18,6 +18,10 @@
 
 <script>
 // import formatGraph from '@/utils/formatGraph'
+import {
+  formatSubsidyApplication,
+  labelSubsidyApplication
+} from '../../../utils/jsonToChartData'
 import TimeChartForSubsidyApplication from '@/components/TimeChartForSubsidyApplication.vue'
 
 export default {
@@ -25,17 +29,11 @@ export default {
     TimeChartForSubsidyApplication
   },
   data() {
-    const inspectionsItems = [
-      '① ' + this.$t('申請書提出件数'),
-      '② ' + this.$t('支給決定件数')
-    ]
-    const inspectionsLabels = ['5/1', '5/8', '5/15', '5/22', '5/29']
-
     return {
       date: String,
-      patientsGraph: [],
-      inspectionsItems,
-      inspectionsLabels
+      chartData: [],
+      legends: [],
+      xLabels: []
     }
   },
   created() {
@@ -44,13 +42,46 @@ export default {
   methods: {
     setData() {
       // const json = this.$store.state.data
-      // const patientsGraph = formatGraph(json.patients_summary.data)
-      this.patientsGraph = [
-        [63, 69, 81, 133, 144],
-        [0, 40, 72, 122, 132]
+      const json = {
+        subsidy_summary: {
+          date: '2020/06/06 18:09',
+          data: [
+            {
+              日付: '2020-05-01',
+              申請書提出件数: 1,
+              支給決定件数: 1
+            },
+            {
+              日付: '2020-05-08',
+              申請書提出件数: 2,
+              支給決定件数: 2
+            },
+            {
+              日付: '2020-05-15',
+              申請書提出件数: 0,
+              支給決定件数: 0
+            },
+            {
+              日付: '2020-05-22',
+              申請書提出件数: 4,
+              支給決定件数: 4
+            },
+            {
+              日付: '2020-06-29',
+              申請書提出件数: 5,
+              支給決定件数: 5
+            }
+          ]
+        }
+      }
+
+      this.chartData = formatSubsidyApplication(json.subsidy_summary.data)
+      this.legends = [
+        '① ' + this.$t('申請書提出件数'),
+        '② ' + this.$t('支給決定件数')
       ]
-      // this.date = json.patients_summary.date
-      this.date = '2020/06/06 18:09'
+      this.xLabels = labelSubsidyApplication(json.subsidy_summary.data)
+      this.date = json.subsidy_summary.date
     }
   }
 }
