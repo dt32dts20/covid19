@@ -1,3 +1,15 @@
+type jsonUsageStatsTransition = {
+  'がんばろう！おおいた資金繰り応援資金': number[]
+  新型コロナウイルス感染症緊急対策特別資金: number[]
+}
+
+export const formatUsageStatsTransition = (data: jsonUsageStatsTransition) => {
+  return [
+    data['がんばろう！おおいた資金繰り応援資金'],
+    data['新型コロナウイルス感染症緊急対策特別資金']
+  ]
+}
+
 type jsonSubsidyConsultation = {
   '労働局 (097-535-2100) への相談件数': number[]
   '大分県 (0120-575-626) への相談件数': number[]

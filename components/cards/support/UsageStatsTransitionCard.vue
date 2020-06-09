@@ -6,11 +6,11 @@
       "
       :title-id="'usage-stats-transition'"
       :chart-id="'usage-stats-transition'"
-      :chart-data="patientsGraph"
+      :chart-data="chartData"
       :date="date"
       :unit="$t('億円')"
-      :items="inspectionsItems"
-      :labels="inspectionsLabels"
+      :items="legends"
+      :labels="xLabels"
       :url="
         'https://data.bodik.jp/dataset/_covid19_support/resource/9c609301-4800-4f06-a400-62ba5eb489ba'
       "
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-// import formatGraph from '@/utils/formatGraph'
+import { formatUsageStatsTransition } from '../../../utils/jsonToChartData'
 import TimeStackChart from '@/components/TimeStackChart.vue'
 
 export default {
@@ -27,17 +27,11 @@ export default {
     TimeStackChart
   },
   data() {
-    const inspectionsItems = [
-      '① ' + this.$t('がんばろう！おおいた資金繰り応援資金'),
-      '② ' + this.$t('新型コロナウイルス感染症緊急対策特別資金')
-    ]
-    const inspectionsLabels = ['5/1', '5/8', '5/15', '5/22', '5/29']
-
     return {
       date: String,
-      patientsGraph: [],
-      inspectionsItems,
-      inspectionsLabels
+      chartData: [],
+      legends: [],
+      xLabels: []
     }
   },
   created() {
@@ -46,13 +40,24 @@ export default {
   methods: {
     setData() {
       // const json = this.$store.state.data
-      // const patientsGraph = formatGraph(json.patients_summary.data)
-      this.patientsGraph = [
-        [0, 23.4, 96.5, 124.3, 168.3],
-        [99.0, 122.3, 125.8, 128.1, 132.3]
+      const json = {
+        loan_achievements: {
+          date: '2020/05/31 18:30',
+          data: {
+            新型コロナウイルス感染症緊急対策特別資金: [0, 1, 2, 3],
+            'がんばろう！おおいた資金繰り応援資金': [0, 1, 2, 3]
+          },
+          labels: ['5/10', '5/17', '5/24', '5/31']
+        }
+      }
+
+      this.chartData = formatUsageStatsTransition(json.loan_achievements.data)
+      this.legends = [
+        '① ' + this.$t('がんばろう！おおいた資金繰り応援資金'),
+        '② ' + this.$t('新型コロナウイルス感染症緊急対策特別資金')
       ]
-      // this.date = json.patients_summary.date
-      this.date = '2020/06/06 18:09'
+      this.xLabels = json.loan_achievements.labels
+      this.date = json.loan_achievements.date
     }
   }
 }
