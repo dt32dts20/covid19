@@ -4,11 +4,11 @@
       :title="$t('雇用調整助成金の申請に関する相談件数')"
       :title-id="'subsidy-consultation-transition'"
       :chart-id="'subsidy-consultation-transition'"
-      :chart-data="patientsGraph"
+      :chart-data="chartData"
       :date="date"
       :unit="$t('件.tested')"
-      :items="inspectionsItems"
-      :labels="inspectionsLabels"
+      :items="legends"
+      :labels="xLabels"
       :url="
         'https://data.bodik.jp/dataset/_covid19_support/resource/226c523f-178d-4180-8a1c-16e492757378'
       "
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-// import formatGraph from '@/utils/formatGraph'
+import { formatSubsidyConsultation } from '../../../utils/jsonToChartData'
 import TimeChartForSubsidy from '@/components/TimeChartForSubsidy.vue'
 
 export default {
@@ -25,17 +25,11 @@ export default {
     TimeChartForSubsidy
   },
   data() {
-    const inspectionsItems = [
-      '① ' + this.$t('労働局 (097-535-2100) への相談件数'),
-      '② ' + this.$t('大分県 (0120-575-626) への相談件数')
-    ]
-    const inspectionsLabels = ['5/1', '5/8', '5/15', '5/22', '5/29']
-
     return {
       date: String,
-      patientsGraph: [],
-      inspectionsItems,
-      inspectionsLabels
+      chartData: [],
+      legends: [],
+      xLabels: []
     }
   },
   created() {
@@ -44,13 +38,24 @@ export default {
   methods: {
     setData() {
       // const json = this.$store.state.data
-      // const patientsGraph = formatGraph(json.patients_summary.data)
-      this.patientsGraph = [
-        [63, 81, 69, 133, 144],
-        [0, 40, 122, 168, 72]
+      const json = {
+        subsidy_consultation: {
+          date: '2020/05/31 18:30',
+          data: {
+            '労働局 (097-535-2100) への相談件数': [86, 89, 72, 37],
+            '大分県 (0120-575-626) への相談件数': [6, 25, 14, 0]
+          },
+          labels: ['5/10', '5/17', '5/24', '5/31']
+        }
+      }
+
+      this.chartData = formatSubsidyConsultation(json.subsidy_consultation.data)
+      this.legends = [
+        '① ' + this.$t('労働局 (097-535-2100) への相談件数'),
+        '② ' + this.$t('大分県 (0120-575-626) への相談件数')
       ]
-      // this.date = json.patients_summary.date
-      this.date = '2020/06/06 18:09'
+      this.xLabels = json.subsidy_consultation.labels
+      this.date = json.subsidy_consultation.date
     }
   }
 }

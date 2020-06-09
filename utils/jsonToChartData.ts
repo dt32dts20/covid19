@@ -1,3 +1,15 @@
+type jsonSubsidyConsultation = {
+  '労働局 (097-535-2100) への相談件数': number[]
+  '大分県 (0120-575-626) への相談件数': number[]
+}
+
+export const formatSubsidyConsultation = (data: jsonSubsidyConsultation) => {
+  return [
+    data['労働局 (097-535-2100) への相談件数'],
+    data['大分県 (0120-575-626) への相談件数']
+  ]
+}
+
 type jsonSubsidyApplication = {
   日付: Date
   申請書提出件数: number
