@@ -32,7 +32,7 @@
     &-date {
       white-space: wrap;
       display: inline-block;
-      font-size: 12px;
+      font-size: 14px;
       line-height: 12px;
       color: $gray-3;
     }

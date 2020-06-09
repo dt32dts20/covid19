@@ -83,6 +83,10 @@ const config: Configuration = {
     {
       src: '@/plugins/vuetify.ts',
       ssr: true
+    },
+    {
+      src: '~/plugins/chartjs-datalabels',
+      ssr: true
     }
   ],
   /*
@@ -167,7 +171,11 @@ const config: Configuration = {
         '/cards/number-of-tested',
         '/cards/number-of-reports-to-covid19-consultation-desk',
         '/cards/predicted-number-of-toei-subway-passengers',
-        '/cards/agency'
+        '/cards/agency',
+        '/cards/usage-stats-transition',
+        '/cards/usage-stats-by-indusry',
+        '/cards/subsidy-consultation-transition',
+        '/cards/subsidy-application-transition'
       ]
 
       const routes: string[] = []

@@ -23,7 +23,7 @@
             :options="displayOption"
             :plugins="scrollPlugin"
             :height="240"
-            :width="graghWidth"
+            :width="graphWidth"
             :style="{ display: displayValue('bar') }"
           />
           <line-chart
@@ -33,7 +33,7 @@
             :options="displayOption"
             :plugins="scrollPlugin"
             :height="240"
-            :width="graghWidth"
+            :width="graphWidth"
             :style="{ display: displayValue('line') }"
           />
         </div>
@@ -135,7 +135,7 @@ type Computed = {
     transition: string
     cumulative: string
   }[]
-  graghWidth: number
+  graphWidth: number
 }
 type Props = {
   title: string
@@ -257,7 +257,12 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               }),
               backgroundColor: style.fillColor,
               borderColor: style.strokeColor,
-              borderWidth: 1
+              borderWidth: 1,
+              datalabels: {
+                font: {
+                  size: '0'
+                }
+              }
             }
           ]
         }
@@ -272,7 +277,12 @@ const options: ThisTypedComponentOptionsWithRecordProps<
             }),
             backgroundColor: '#edfff3',
             borderColor: style.strokeColor,
-            borderWidth: 2
+            borderWidth: 2,
+            datalabels: {
+              font: {
+                size: '0'
+              }
+            }
           }
         ]
       }
@@ -375,7 +385,12 @@ const options: ThisTypedComponentOptionsWithRecordProps<
             {
               data: [Math.max(...this.chartData.map(d => d.transition))],
               backgroundColor: 'transparent',
-              borderWidth: 0
+              borderWidth: 0,
+              datalabels: {
+                font: {
+                  size: '0'
+                }
+              }
             }
           ]
         }
@@ -386,7 +401,12 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           {
             data: [Math.max(...this.chartData.map(d => d.cumulative))],
             backgroundColor: 'transparent',
-            borderWidth: 0
+            borderWidth: 0,
+            datalabels: {
+              font: {
+                size: '0'
+              }
+            }
           }
         ]
       }
@@ -512,7 +532,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         .sort((a, b) => dayjs(a.text).unix() - dayjs(b.text).unix())
         .reverse()
     },
-    graghWidth() {
+    graphWidth() {
       const window = this.chartWidth ? this.chartWidth : 0
       const calc = this.displayData.labels!.length * 11
       return Math.max(window, calc)

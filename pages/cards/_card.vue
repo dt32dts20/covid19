@@ -27,6 +27,18 @@
           'number-of-reports-to-covid19-consultation-desk'
       "
     />
+    <usage-stats-by-industry-card
+      v-else-if="this.$route.params.card == 'usage-stats-by-industry'"
+    />
+    <usage-stats-transition-card
+      v-else-if="this.$route.params.card == 'usage-stats-transition'"
+    />
+    <subsidy-consultation-transition-card
+      v-else-if="this.$route.parasm.card == 'subsidy-consultation-transition'"
+    />
+    <subsidy-application-transition-card
+      v-else-if="this.$route.params.card == 'subsidy-application-transition'"
+    />
   </div>
 </template>
 
@@ -39,6 +51,10 @@ import InspectionsTransitionCard from '@/components/cards/InspectionsTransitionC
 import PatientsByAgeCard from '@/components/cards/PatientsByAgeCard.vue'
 import SickbedsUsedRateCard from '@/components/cards/SickbedsUsedRateCard.vue'
 import ConsultationsTransitionCard from '@/components/cards/ConsultationsTransitionCard.vue'
+import UsageStatsByIndustryCard from '@/components/cards/support/UsageStatsByIndustryCard.vue'
+import UsageStatsTransitionCard from '@/components/cards/support/UsageStatsTransitionCard.vue'
+import SubsidyConsultationTransitionCard from '@/components/cards/support/SubsidyConsultationTransitionCard.vue'
+import SubsidyApplicationTransitionCard from '@/components/cards/support/SubsidyApplicationTransitionCard.vue'
 
 export default {
   components: {
@@ -49,7 +65,11 @@ export default {
     InspectionsTransitionCard,
     PatientsByAgeCard,
     SickbedsUsedRateCard,
-    ConsultationsTransitionCard
+    ConsultationsTransitionCard,
+    UsageStatsByIndustryCard,
+    UsageStatsTransitionCard,
+    SubsidyConsultationTransitionCard,
+    SubsidyApplicationTransitionCard
   },
   async fetch({ store, app }) {
     await app.$axios.get(app.$env.apiUrl).then(response => {
@@ -82,6 +102,22 @@ export default {
         break
       case 'number-of-reports-to-covid19-consultation-desk':
         title = this.$t('相談窓口相談件数')
+        break
+      case 'usage-stats-transition':
+        title = this.$t(
+          '新型コロナウイルス関連の大分県における融資の利用状況 (融資実績)'
+        )
+        break
+      case 'usage-stats-by-industry':
+        title = this.$t(
+          '新型コロナウイルス関連の大分県における融資の利用状況 (業種別件数)'
+        )
+        break
+      case 'subsidy-consultation-transition':
+        title = this.$t('雇用調整助成金の申請に関する相談件数')
+        break
+      case 'subsidy-application-transition':
+        title = this.$t('雇用調整助成金 (申請書提出件数、支給決定件数)')
         break
     }
 

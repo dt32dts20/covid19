@@ -34,3 +34,11 @@ export default (data: DataType[]) => {
     })
   return graphData
 }
+
+// 上記の関数は小計と累計だが，それをどちらも累計にすればいいのでは
+// よってpatientSummaryと同様の形式で構わない，いや項目が2つなのか，まぁいいや
+export type Type = {
+  label: string
+  提出件数: number
+  決定件数: number
+}
