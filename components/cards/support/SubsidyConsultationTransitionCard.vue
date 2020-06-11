@@ -39,13 +39,13 @@ export default {
     setData() {
       const json = this.$store.state.support
 
-      this.chartData = formatSubsidyConsultation(json.subsidy_consultation.data)
+      this.chartData = formatSubsidyConsultation(json.subsidy.data)
       this.legends = [
         '① ' + this.$t('労働局 (097-535-2100) への相談件数'),
         '② ' + this.$t('大分県 (0120-575-626) への相談件数')
       ]
-      this.xLabels = json.subsidy_consultation.labels
-      this.date = json.subsidy_consultation.date
+      this.xLabels = json.subsidy.labels
+      this.date = json.subsidy.date
     }
   }
 }
