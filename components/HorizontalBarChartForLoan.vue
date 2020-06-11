@@ -1,21 +1,10 @@
 <template>
   <data-view :title="title" :title-id="titleId" :date="date" :url="url">
-    <template v-slot:button>
-      <ul :class="$style.notes">
-        <li>
-          {{
-            $t(
-              '病院以外で対応する場合もあるため、これが最大許容数ではありません。'
-            )
-          }}
-        </li>
-      </ul>
-    </template>
-    <pie-chart
+    <horizontal-bar
       :chart-id="chartId"
       :chart-data="displayData"
       :options="displayOption"
-      :height="240"
+      :height="320"
     />
     <template v-slot:infoPanel>
       <data-view-basic-info-panel
@@ -89,12 +78,11 @@ export default {
         }
       }
 
+      // TODO: Display total patients.
       const chartData = this.chartData[this.chartData.length - 1]
-      const total = chartData.cumulative
-      const remaining = chartData.transition
-      const patients = total - remaining
+      const total = chartData.cumulative.toLocaleString()
       return {
-        lText: patients + '/' + total,
+        lText: total,
         sText: this.info,
         unit: this.unit
       }
@@ -102,37 +90,27 @@ export default {
     displayData() {
       if (this.isNotLoaded()) {
         return {
-          labels: [''],
-          datasets: [
-            {
-              label: '',
-              data: '',
-              backgroundColor: '',
-              borderWidth: 0
-            }
-          ]
+          lText: '',
+          sText: '',
+          unit: ''
         }
       }
-      const colorArray = ['#00B849', '#D9D9D9']
+
       return {
         labels: this.chartData.map(d => {
           return this.$t(d.label)
         }),
         datasets: [
           {
-            label: this.chartData.map(d => {
-              return this.$t(d.label)
-            }),
             data: this.chartData.map(d => {
               return d.transition
             }),
-            backgroundColor: this.chartData.map((_, index) => {
-              return colorArray[index]
-            }),
+            backgroundColor: '#1d8d1d',
             borderWidth: 0,
             datalabels: {
+              color: 'white',
               font: {
-                size: '20',
+                size: '14',
                 weight: 'bold'
               }
             }
@@ -152,7 +130,19 @@ export default {
         responsive: true,
         maintainAspectRatio: false,
         legend: {
-          display: true
+          display: false
+        },
+        scales: {
+          xAxes: [
+            {
+              ticks: {
+                min: 0
+              },
+              gridLines: {
+                display: false
+              }
+            }
+          ]
         }
       }
     }
@@ -172,11 +162,13 @@ export default {
 .Graph-Desc {
   margin: 10px 0;
   font-size: 12px;
-  color: $gray-3;
+  //  color: $gray-3;
+  color: red;
 }
 .link {
   text-decoration: none;
 }
+
 ul.notes {
   margin-top: 10px;
   margin-bottom: 0;

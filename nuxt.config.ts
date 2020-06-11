@@ -8,6 +8,7 @@ const config: Configuration = {
   mode: 'spa',
   env: {
     apiUrl: 'https://data-covid19-oita.netlify.app/data.json',
+    supportUrl: 'https://data-covid19-oita.netlify.app/financial.json',
     newsUrl: 'https://data-covid19-oita.netlify.app/news.json'
   },
   /*
@@ -17,7 +18,7 @@ const config: Configuration = {
     htmlAttrs: {
       prefix: 'og: http://ogp.me/ns#'
     },
-    titleTemplate: '%s | 大分県 新型コロナウイルス感染症対策サイト (非公式)',
+    titleTemplate: '%s | 大分県 新型コロナウイルス感染症対策サイト',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -82,6 +83,10 @@ const config: Configuration = {
     },
     {
       src: '@/plugins/vuetify.ts',
+      ssr: true
+    },
+    {
+      src: '~/plugins/chartjs-datalabels',
       ssr: true
     }
   ],
@@ -167,7 +172,11 @@ const config: Configuration = {
         '/cards/number-of-tested',
         '/cards/number-of-reports-to-covid19-consultation-desk',
         '/cards/predicted-number-of-toei-subway-passengers',
-        '/cards/agency'
+        '/cards/agency',
+        '/cards/usage-stats-transition',
+        '/cards/usage-stats-by-indusry',
+        '/cards/subsidy-consultation-transition',
+        '/cards/subsidy-application-transition'
       ]
 
       const routes: string[] = []

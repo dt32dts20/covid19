@@ -1,6 +1,6 @@
 # 大分県 新型コロナウイルス感染症対策サイト
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![](https://github.com/covid-oita/covid19/workflows/production%20deploy/badge.svg)
@@ -120,6 +120,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/satetsu"><img src="https://github.com/satetsu.png" width="100px;" alt=""/><br /><sub><b>satetsu</b></sub></a><br /><a href="#business-satetsu" title="Business development">💼</a></td>
     <td align="center"><a href="https://nakaokarei.github.io/my_portfolio"><img src="https://github.com/NakaokaRei.png" width="100px;" alt=""/><br /><sub><b>Nakaoka Rei</b></sub></a><br /><a href="#translation-NakaokaRei" title="Translation">🌍</a></td>
     <td align="center"><a href="https://pnnutkung.github.io/blog"><img src="https://github.com/PNNutkung.png" width="100px;" alt=""/><br /><sub><b>Pipatpol Tanavongchinda</b></sub></a><br /><a href="#translation-PNNutkung" title="Translation">🌍</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/jiprastyo"><img src="https://github.com/jiprastyo.png" width="100px;" alt=""/><br /><sub><b>Prastyo</b></sub></a><br /><a href="#translation-Prastyo" title="Translation">🌍</a></td>
   </tr>
 </table>
 
