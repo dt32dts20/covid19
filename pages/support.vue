@@ -33,11 +33,8 @@ export default Vue.extend({
     SubsidyApplicationTransitionCard
   },
   async fetch({ store, app }) {
-    await app.$axios.get(app.$env.apiUrl).then((response: any) => {
-      store.commit('setData', response.data)
-    })
-    await app.$axios.get(app.$env.newsUrl).then((response: any) => {
-      store.commit('setNews', response.data)
+    await app.$axios.get(app.$env.supportUrl).then((response: any) => {
+      store.commit('setSupport', response.data)
     })
   },
   data() {
@@ -45,8 +42,7 @@ export default Vue.extend({
       headerItem: {
         icon: 'mdi-chart-timeline-variant',
         title: this.$t('県内の最新支援状況')
-      },
-      newsItems: this.$store.state.news.newsItems
+      }
     }
     return data
   },

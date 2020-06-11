@@ -75,6 +75,9 @@ export default {
     await app.$axios.get(app.$env.apiUrl).then(response => {
       store.commit('setData', response.data)
     })
+    await app.$axios.get(app.$env.supportUrl).then(response => {
+      store.commit('setSupport', response.data)
+    })
   },
   data() {
     let title
