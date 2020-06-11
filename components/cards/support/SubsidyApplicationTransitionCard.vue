@@ -41,39 +41,7 @@ export default {
   },
   methods: {
     setData() {
-      // const json = this.$store.state.data
-      const json = {
-        subsidy_summary: {
-          date: '2020/06/06 18:09',
-          data: [
-            {
-              日付: '2020-05-01',
-              申請書提出件数: 1,
-              支給決定件数: 1
-            },
-            {
-              日付: '2020-05-08',
-              申請書提出件数: 2,
-              支給決定件数: 2
-            },
-            {
-              日付: '2020-05-15',
-              申請書提出件数: 0,
-              支給決定件数: 0
-            },
-            {
-              日付: '2020-05-22',
-              申請書提出件数: 4,
-              支給決定件数: 4
-            },
-            {
-              日付: '2020-06-29',
-              申請書提出件数: 5,
-              支給決定件数: 5
-            }
-          ]
-        }
-      }
+      const json = this.$store.state.support
 
       this.chartData = formatSubsidyApplication(json.subsidy_summary.data)
       this.legends = [

@@ -37,17 +37,7 @@ export default {
   },
   methods: {
     setData() {
-      // const json = this.$store.state.data
-      const json = {
-        subsidy_consultation: {
-          date: '2020/05/31 18:30',
-          data: {
-            '労働局 (097-535-2100) への相談件数': [86, 89, 72, 37],
-            '大分県 (0120-575-626) への相談件数': [6, 25, 14, 0]
-          },
-          labels: ['5/10', '5/17', '5/24', '5/31']
-        }
-      }
+      const json = this.$store.state.support
 
       this.chartData = formatSubsidyConsultation(json.subsidy_consultation.data)
       this.legends = [
