@@ -39,25 +39,15 @@ export default {
   },
   methods: {
     setData() {
-      // const json = this.$store.state.data
-      const json = {
-        loan_achievements: {
-          date: '2020/05/31 18:30',
-          data: {
-            新型コロナウイルス感染症緊急対策特別資金: [0, 1, 2, 3],
-            'がんばろう！おおいた資金繰り応援資金': [0, 1, 2, 3]
-          },
-          labels: ['5/10', '5/17', '5/24', '5/31']
-        }
-      }
+      const json = this.$store.state.support
 
-      this.chartData = formatUsageStatsTransition(json.loan_achievements.data)
+      this.chartData = formatUsageStatsTransition(json.loan_achivements.data)
       this.legends = [
         '① ' + this.$t('がんばろう！おおいた資金繰り応援資金'),
         '② ' + this.$t('新型コロナウイルス感染症緊急対策特別資金')
       ]
-      this.xLabels = json.loan_achievements.labels
-      this.date = json.loan_achievements.date
+      this.xLabels = json.loan_achivements.labels
+      this.date = json.loan_achivements.date
     }
   }
 }

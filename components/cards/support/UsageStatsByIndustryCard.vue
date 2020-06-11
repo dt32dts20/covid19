@@ -35,21 +35,7 @@ export default {
   },
   methods: {
     setData() {
-      // const json = this.$store.state.data
-      const json = {
-        loan_achivements_by_industry: {
-          date: '2020/06/03 19:09',
-          data: {
-            飲食店: 100,
-            'サービス業 (宿泊除く)': 3,
-            小売業: 13,
-            卸売業: 6,
-            建設業: 9,
-            宿泊業: 10,
-            その他: 4
-          }
-        }
-      }
+      const json = this.$store.state.support
 
       this.chartData = formatVariableGraph(
         json.loan_achivements_by_industry.data

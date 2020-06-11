@@ -8,6 +8,7 @@ const config: Configuration = {
   mode: 'spa',
   env: {
     apiUrl: 'https://data-covid19-oita.netlify.app/data.json',
+    supportUrl: 'https://data-covid19-oita.netlify.app/financial.json',
     newsUrl: 'https://data-covid19-oita.netlify.app/news.json'
   },
   /*

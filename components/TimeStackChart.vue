@@ -38,6 +38,7 @@
             :plugins="scrollPlugin"
             :display-legends="displayLegends"
             :height="240"
+            :width="graphWidth"
           />
         </div>
       </div>
@@ -470,6 +471,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     const barElement = barChart.$el
     const canvas = barElement.querySelector('canvas')
     const labelledbyId = `${this.titleId}-graph`
+    // スクロールする幅が大きい分には問題ないので大きめにした 本来は適切な値を計算すべき
+    canvas!.parentElement!.parentElement!.parentElement!.scrollLeft! = 1200
 
     if (canvas) {
       canvas.setAttribute('role', 'img')
