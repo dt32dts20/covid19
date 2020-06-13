@@ -20,7 +20,7 @@
 
 <script>
 import { formatUsageStatsTransition } from '../../../utils/jsonToChartData'
-import StackedBarChart from '@/components/StackedBarChart.vue'
+import StackedBarChart from '@/components/charts/StackedBarChart.vue'
 
 export default {
   components: {

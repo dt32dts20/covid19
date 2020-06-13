@@ -18,7 +18,7 @@
 
 <script>
 import formatVariableGraph from '@/utils/formatVariableGraph.ts'
-import HorizontalBarChart from '@/components/HorizontalBarChart.vue'
+import HorizontalBarChart from '@/components/charts/HorizontalBarChart.vue'
 
 export default {
   components: {

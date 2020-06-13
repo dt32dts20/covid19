@@ -22,7 +22,7 @@ import {
   formatSubsidyApplication,
   labelSubsidyApplication
 } from '../../../utils/jsonToChartData'
-import MultiBarChart from '@/components/MultiBarChart.vue'
+import MultiBarChart from '@/components/charts/MultiBarChart.vue'
 
 export default {
   components: {
