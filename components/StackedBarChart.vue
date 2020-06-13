@@ -55,10 +55,10 @@
     </div>
     <template v-slot:infoPanel>
       <data-view-basic-info-panel
-        :l-text="displayInfo.lText"
-        :m-text="displayInfo.mText"
-        :s-text="displayInfo.sText"
-        :unit="displayInfo.unit"
+        :l-text="info.lText"
+        :m-text="info.mText"
+        :s-text="info.sText"
+        :unit="info.unit"
       />
     </template>
     <template v-slot:footer>
@@ -92,12 +92,6 @@ type Methods = {
 }
 
 type Computed = {
-  displayInfo: {
-    lText: string
-    mText: string
-    sText: string
-    unit: string
-  }
   displayData: DisplayData
   displayOption: Chart.ChartOptions
   displayDataHeader: DisplayData
@@ -114,9 +108,9 @@ type Props = {
   date: string
   items: string[]
   labels: string[]
+  info: Object
   dataLabels: string[] | TranslateResult[]
   tableLabels: string[] | TranslateResult[]
-  unit: string
   scrollPlugin: Chart.PluginServiceRegistrationOptions[]
   yAxesBgPlugin: Chart.PluginServiceRegistrationOptions[]
   url: string
@@ -171,6 +165,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       type: Array,
       default: () => []
     },
+    info: {
+      type: Object,
+      default: () => {}
+    },
     dataLabels: {
       type: Array,
       default: () => []
@@ -178,10 +176,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     tableLabels: {
       type: Array,
       default: () => []
-    },
-    unit: {
-      type: String,
-      default: ''
     },
     scrollPlugin: {
       type: Array,
@@ -204,17 +198,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     canvas: true
   }),
   computed: {
-    displayInfo() {
-      const lasts = this.pickLastNumber(this.chartData)
-      return {
-        lText: (lasts[0] + lasts[1]).toLocaleString(),
-        mText: '累計値',
-        sText: `${this.$t('うち')} ①${lasts[0]}${this.unit} ②${lasts[1]}${
-          this.unit
-        }`,
-        unit: this.unit
-      }
-    },
     displayData() {
       const graphSeries = getGraphSeriesStyle(this.chartData.length)
       return {
