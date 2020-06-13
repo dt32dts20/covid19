@@ -41,8 +41,8 @@ export default {
 
       this.chartData = formatSubsidyConsultation(json.subsidy.data)
       this.legends = [
-        '① ' + this.$t('労働局 (TEL 097-535-2100) への相談件数'),
-        '② ' + this.$t('大分県 (TEL 0120-575-626) への相談件数')
+        '① ' + this.$t('労働局 (TEL 097-535-2100) への1週間ごとの相談件数'),
+        '② ' + this.$t('大分県 (TEL 0120-575-626) への1週間ごとの相談件数')
       ]
       this.xLabels = json.subsidy.labels
       this.date = json.subsidy.date

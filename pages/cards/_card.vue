@@ -120,7 +120,9 @@ export default {
         title = this.$t('雇用調整助成金の申請に関する相談件数')
         break
       case 'subsidy-application-transition':
-        title = this.$t('雇用調整助成金 (申請書提出件数、支給決定件数)')
+        title = this.$t(
+          '雇用調整助成金 (申請書受付件数 (累計値)、支給決定件数 (累計値))'
+        )
         break
     }
 
