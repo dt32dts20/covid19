@@ -1,23 +1,24 @@
 <template>
   <v-col cols="12" md="6" class="DataCard">
-    <patients-by-residence-table
+    <data-table
       :title="$t('居住地別陽性患者数')"
       :title-id="'patients-by-residence'"
       :chart-data="chartData"
       :date="date"
       :info="info"
+      :url="'https://data.bodik.jp/dataset/_covid19'"
     />
   </v-col>
 </template>
 
 <script>
 import dayjs from 'dayjs'
-import PatientsByResidenceTable from '@/components/PatientsByResidenceTable.vue'
+import DataTable from '@/components/DataTable.vue'
 import formatGraph from '@/utils/formatGraph'
 
 export default {
   components: {
-    PatientsByResidenceTable
+    DataTable
   },
   data() {
     const chartData = {
