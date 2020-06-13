@@ -1,10 +1,8 @@
 <template>
   <data-view :title="title" :title-id="titleId" :date="date" :url="url">
-    <template v-slot:button>
+    <template v-slot:description>
       <ul :class="$style.notes">
-        <li>
-          {{ $t('年代が公開されていない患者は含まれていません。') }}
-        </li>
+        <li>{{ $t(description) }}</li>
       </ul>
     </template>
     <horizontal-bar
@@ -34,6 +32,11 @@ import OpenDataLink from '@/components/OpenDataLink.vue'
 export default {
   components: { DataView, DataViewBasicInfoPanel, OpenDataLink },
   props: {
+    description: {
+      type: String,
+      required: false,
+      default: ''
+    },
     title: {
       type: String,
       required: false,
@@ -115,8 +118,10 @@ export default {
             backgroundColor: '#1d8d1d',
             borderWidth: 0,
             datalabels: {
+              color: 'white',
               font: {
-                size: '0'
+                size: '14',
+                weight: 'bold'
               }
             }
           }
@@ -128,24 +133,9 @@ export default {
         return {}
       }
 
-      const unitBed = this.unit
-      const unitPerson = this.$t('人')
-      //      const label = this.$t('総病床数')
-      const chartData = this.chartData
       return {
         tooltips: {
-          displayColors: false,
-          callbacks: {
-            label(tooltipItem) {
-              const index = tooltipItem.index
-              const numerator = chartData[index].transition
-              const numeratorUnit = index === 1 ? unitBed : unitPerson
-              return `${numerator} ${numeratorUnit}`
-            },
-            title(tooltipItem, data) {
-              return data.labels[tooltipItem[0].index]
-            }
-          }
+          enabled: false
         },
         responsive: true,
         maintainAspectRatio: false,
