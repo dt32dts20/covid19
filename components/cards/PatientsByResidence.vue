@@ -13,6 +13,7 @@
 <script>
 import dayjs from 'dayjs'
 import PatientsByResidenceTable from '@/components/PatientsByResidenceTable.vue'
+import formatGraph from '@/utils/formatGraph'
 
 export default {
   components: {
@@ -61,10 +62,16 @@ export default {
       'YYYY/MM/DD HH:mm'
     )
 
+    const json = this.$store.state.data
+    const patientsGraph = formatGraph(json.patients_summary.data)
     const info = {
+      lText: patientsGraph[
+        patientsGraph.length - 1
+      ].cumulative.toLocaleString(),
       sText: this.$t('{date}の累計', {
         date: dayjs(this.$store.state.data.patients.date).format('M/DD')
-      })
+      }),
+      unit: this.$t('人')
     }
 
     const data = {

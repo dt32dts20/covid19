@@ -56,6 +56,7 @@
     <template v-slot:infoPanel>
       <data-view-basic-info-panel
         :l-text="displayInfo.lText"
+        :m-text="displayInfo.mText"
         :s-text="displayInfo.sText"
         :unit="displayInfo.unit"
       />
@@ -97,7 +98,8 @@ type Methods = {
 type Computed = {
   displayInfo: {
     lText: string
-    sText: string
+    mText: string
+    sText: TranslateResult
     unit: string
   }
   displayData: DisplayData
@@ -208,12 +210,11 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   computed: {
     displayInfo() {
       const len = this.chartData[0].length
-      const val1 = this.chartData[0][len - 1]
-      const val2 = this.chartData[1][len - 1]
-      const sum = val1 + val2
+      const cnt = this.chartData[1][len - 1]
       return {
-        lText: sum.toLocaleString(),
-        sText: `${this.$t('うち')} ①${val1}${this.unit} ②${val2}${this.unit}`,
+        lText: cnt.toLocaleString(),
+        mText: '累計値',
+        sText: this.$t('支給決定件数'),
         unit: this.unit
       }
     },

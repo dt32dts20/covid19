@@ -1,9 +1,7 @@
 <template>
   <v-col cols="12" md="6" class="DataCard">
     <time-chart-for-subsidy-application
-      :title="
-        $t('雇用調整助成金 (申請書受付件数 (累計値)、支給決定件数 (累計値))')
-      "
+      :title="$t('雇用調整助成金の支給決定件数')"
       :title-id="'subsidy-application-transition'"
       :chart-id="'subsidy-application-transition'"
       :chart-data="chartData"
