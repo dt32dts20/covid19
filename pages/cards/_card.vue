@@ -34,7 +34,7 @@
       v-else-if="this.$route.params.card == 'usage-stats-transition'"
     />
     <subsidy-consultation-transition-card
-      v-else-if="this.$route.parasm.card == 'subsidy-consultation-transition'"
+      v-else-if="this.$route.params.card == 'subsidy-consultation-transition'"
     />
     <subsidy-application-transition-card
       v-else-if="this.$route.params.card == 'subsidy-application-transition'"
