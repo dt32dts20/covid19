@@ -56,6 +56,7 @@
     <template v-slot:infoPanel>
       <data-view-basic-info-panel
         :l-text="displayInfo.lText"
+        :m-text="displayInfo.mText"
         :s-text="displayInfo.sText"
         :unit="displayInfo.unit"
       />
@@ -97,6 +98,7 @@ type Methods = {
 type Computed = {
   displayInfo: {
     lText: string
+    mText: string
     sText: string
     unit: string
   }
@@ -212,6 +214,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       const sum = val1 + val2
       return {
         lText: sum.toLocaleString(),
+        mText: '累計値',
         sText: `${this.$t('うち')} ①${val1}${this.unit} ②${val2}${this.unit}`,
         unit: this.unit
       }
