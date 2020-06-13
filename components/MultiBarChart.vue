@@ -55,10 +55,10 @@
     </div>
     <template v-slot:infoPanel>
       <data-view-basic-info-panel
-        :l-text="displayInfo.lText"
-        :m-text="displayInfo.mText"
-        :s-text="displayInfo.sText"
-        :unit="displayInfo.unit"
+        :l-text="info.lText"
+        :m-text="info.mText"
+        :s-text="info.sText"
+        :unit="info.unit"
       />
     </template>
     <template v-slot:footer>
@@ -96,12 +96,6 @@ type Methods = {
 }
 
 type Computed = {
-  displayInfo: {
-    lText: string
-    mText: string
-    sText: string
-    unit: string
-  }
   displayData: DisplayData
   displayOption: Chart.ChartOptions
   displayDataHeader: DisplayData
@@ -118,9 +112,9 @@ type Props = {
   date: string
   items: string[]
   labels: string[]
+  info: Object
   dataLabels: string[] | TranslateResult[]
   tableLabels: string[] | TranslateResult[]
-  unit: string
   scrollPlugin: Chart.PluginServiceRegistrationOptions[]
   yAxesBgPlugin: Chart.PluginServiceRegistrationOptions[]
   url: string
@@ -175,6 +169,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       type: Array,
       default: () => []
     },
+    info: {
+      type: Object,
+      default: () => {}
+    },
     dataLabels: {
       type: Array,
       default: () => []
@@ -182,10 +180,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     tableLabels: {
       type: Array,
       default: () => []
-    },
-    unit: {
-      type: String,
-      default: ''
     },
     scrollPlugin: {
       type: Array,
@@ -208,17 +202,6 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     canvas: true
   }),
   computed: {
-    displayInfo() {
-      const val1 = this.sum(this.chartData[0])
-      const val2 = this.sum(this.chartData[1])
-      const sum = val1 + val2
-      return {
-        lText: sum.toLocaleString(),
-        mText: '累計値',
-        sText: `${this.$t('うち')} ①${val1}${this.unit} ②${val2}${this.unit}`,
-        unit: this.unit
-      }
-    },
     displayData() {
       const graphSeries = getGraphSeriesStyle(this.chartData.length)
       return {
@@ -363,7 +346,9 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         legend: {
           display: false
         },
-        tooltips: { enabled: false },
+        tooltips: {
+          enabled: false
+        },
         scales: {
           xAxes: [
             {
@@ -508,6 +493,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     const barElement = barChart.$el
     const canvas = barElement.querySelector('canvas')
     const labelledbyId = `${this.titleId}-graph`
+
     // スクロールする幅が大きい分には問題ないので大きめにした 本来は適切な値を計算すべき
     canvas!.parentElement!.parentElement!.parentElement!.scrollLeft! = 2000
 
